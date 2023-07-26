@@ -26,7 +26,6 @@ export default function UserInputs() {
             <div className="inputs-container">
             <SkillsInput /> 
             </div>
-        
         </div>
     );
 }
