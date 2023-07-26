@@ -39,9 +39,8 @@ body {
 .pdfPreview {
     min-width: 49%;
     max-height: 100vh;
-    max-width: 793.33px;
-    /* max-height: 1122.67px;  */
-    /* max-height: fit-content; */
+    max-width: max-content;
+    height:min-content;
     overflow: auto;
 }
 
@@ -57,7 +56,6 @@ body {
     border-top: 8px solid;
     transform-origin: top left;
     margin: 50px;
-    overflow: auto;
 }
 .details-name {
     font-size: 16pt;
