@@ -7,11 +7,26 @@ import WorkExperienceInput from "./components/WorkExperienceInput";
 export default function UserInputs() {
     return (
         <div className="userInputs">
+            <div className="inputs-container">
             <DetailsInput />
-            {/* <WorkExperienceInput />
+            </div>
+
+            <div className="inputs-container">
+            <WorkExperienceInput />
+            </div>
+
+            <div className="inputs-container">
             <EducationInput />
+            </div>
+
+            <div className="inputs-container">
             <ProjectsInput />
-            <SkillsInput /> */}
+            </div>
+
+            <div className="inputs-container">
+            <SkillsInput /> 
+            </div>
+        
         </div>
     );
 }
