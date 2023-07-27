@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export const CvContext = createContext();
 
@@ -11,6 +12,17 @@ const CvContextProvider = ({ children }) => {
         website: "",
         location: ""
     });
+
+    const [workExperienceAll, setWorkExperienceAll] = useState([]);
+    const [workExperience, setWorkExperience] = useState({
+        id: uuidv4(),
+        company: "",
+        job_title: "",
+        date: "",
+        description: ""
+    });
+
+
    
     return (
         <CvContext.Provider value={{details, setDetails}}>

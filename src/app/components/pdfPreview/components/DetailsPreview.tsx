@@ -18,22 +18,41 @@ export default function DetailsPreview() {
                 {details.objective}
             </div>
             <div className="details-contacts-container">
-                <div className="details-contacts-with-icon">
-                    <EmailIcon fontSize={theme.iconSize} />
-                    <div className="details-contact" style={{ fontSize: theme.size }}>{details.email}</div>
-                </div>
-                <div className="details-contacts-with-icon">
-                    <PhoneAndroidIcon fontSize={theme.iconSize} />
-                    <div className="details-contact" style={{ fontSize: theme.size }}>{details.phone}</div>
-                </div>
-                <div className="details-contacts-with-icon" style={{ fontSize: theme.size }}>
-                    <WebIcon fontSize={theme.iconSize} />
-                    <div className="details-contact" style={{ fontSize: theme.size }}>{details.website}</div>
-                </div>
-                <div className="details-contacts-with-icon" style={{ fontSize: theme.size }}>
-                    <LocationOnIcon fontSize={theme.iconSize} />
-                    <div className="details-contact" style={{ fontSize: theme.size }}>{details.location}</div>
-                </div>
+                {details.email.length > 0 && (
+                    <div className="details-contacts-with-icon">
+                        <EmailIcon fontSize={theme.iconSize} />
+                        <div className="details-contact" style={{ fontSize: theme.size }}>
+                            {details.email}
+                        </div>
+                    </div>
+                )}
+
+                {details.phone.length > 0 && (
+                    <div className="details-contacts-with-icon">
+                        <PhoneAndroidIcon fontSize={theme.iconSize} />
+                        <div className="details-contact" style={{ fontSize: theme.size }}>
+                            {details.phone}
+                        </div>
+                    </div>
+                )}
+
+                {details.website.length > 0 && (
+                    <div className="details-contacts-with-icon" style={{ fontSize: theme.size }}>
+                        <WebIcon fontSize={theme.iconSize} />
+                        <div className="details-contact" style={{ fontSize: theme.size }}>
+                            {details.website}
+                        </div>
+                    </div>
+                )}
+
+                {details.location.length > 0 && (
+                    <div className="details-contacts-with-icon" style={{ fontSize: theme.size }}>
+                        <LocationOnIcon fontSize={theme.iconSize} />
+                        <div className="details-contact" style={{ fontSize: theme.size }}>
+                            {details.location}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
