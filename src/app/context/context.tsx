@@ -52,6 +52,26 @@ const CvContextProvider = ({ children }: any) => {
         additional: "",
     });
 
+    const [projectsAll, setProjectsAll] = useState({
+        title: "PROJECTS",
+        data: [
+            {
+                id: "1",
+                name: "Flight planner",
+                date: "2016",
+                description: "Codelex project",
+                link: "https://github.com/mart8ins/flight-planner",
+            },
+        ],
+    });
+    const [project, setProject] = useState({
+        id: "",
+        name: "",
+        date: "",
+        description: "",
+        link: "",
+    });
+
     return (
         <CvContext.Provider
             value={{
@@ -65,6 +85,9 @@ const CvContextProvider = ({ children }: any) => {
                 setEducation,
                 educationAll,
                 setEducationAll,
+                project, setProject,
+                projectsAll, setProjectsAll
+
             }}>
             {children}
         </CvContext.Provider>

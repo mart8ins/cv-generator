@@ -3,6 +3,7 @@ import DetailsPreview from "./components/DetailsPreview";
 import { AppThemeContext } from "@/app/context/theme-context";
 import ExpierencePreview from "./components/ExpierencePreview";
 import EducationPreview from "./components/EducationPreview";
+import ProjectsPreview from "./components/ProjectsPreview";
 
 export default function PdfPreview() {
     const { theme } = useContext(AppThemeContext);
@@ -23,6 +24,11 @@ export default function PdfPreview() {
                 <div className="preview-group">
                     <EducationPreview />
                 </div>
+
+                <div className="preview-group">
+                    <ProjectsPreview/>
+                </div>
+
             </div>
         </div>
     );

@@ -99,13 +99,12 @@ body {
     margin-top: 12px;
     margin-left: 5px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .details-contacts-with-icon {
     display: flex;
     align-items: center;
-    width: 25%;
 }
 
 .details-contact {
