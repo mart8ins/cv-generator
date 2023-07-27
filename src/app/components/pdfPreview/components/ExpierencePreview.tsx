@@ -1,7 +1,7 @@
 import { CvContext } from "@/app/context/context";
 import { AppThemeContext } from "@/app/context/theme-context";
 import { useContext } from "react";
-import ExpierenceBlock from "./ExpierenceBlock";
+import ExpierenceBlock from "../../shared/ExpierenceBlock";
 
 export default function ExpierencePreview() {
     const { workExperience, workExperienceAll } = useContext(CvContext);

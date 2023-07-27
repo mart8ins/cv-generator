@@ -5,7 +5,7 @@ import { TextField, Button } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import ListIcon from "@mui/icons-material/List";
 import DeleteIcon from "@mui/icons-material/Delete";
-import ExpierenceBlock from "@/app/components/pdfPreview/components/expierencePreview/ExpierenceBlock";
+import ExpierenceBlock from "@/app/components/shared/ExpierenceBlock";
 
 export default function WorkExpierenceInput() {
     const { workExperience, setWorkExperience, workExperienceAll, setWorkExperienceAll } = useContext(CvContext);
@@ -30,15 +30,15 @@ export default function WorkExpierenceInput() {
         });
     }
 
-    function deleteWorkExpierence(id: String){
-        const remaining = workExperienceAll.data.filter((w:any)=> {
-            if(id != w.id) {
+    function deleteWorkExpierence(id: String) {
+        const remaining = workExperienceAll.data.filter((w: any) => {
+            if (id != w.id) {
                 return w;
             }
-        })
+        });
         setWorkExperienceAll({
             ...workExperienceAll,
-            data: remaining
+            data: remaining,
         });
     }
 
@@ -141,7 +141,7 @@ export default function WorkExpierenceInput() {
                             <div key={element.id} className="input-added-expierance">
                                 <div className="input-added-expierance-delete-container">
                                     <div className="input-added-expierance-delete">
-                                        <DeleteIcon onClick={()=> deleteWorkExpierence(element.id)} />
+                                        <DeleteIcon onClick={() => deleteWorkExpierence(element.id)} />
                                     </div>
                                 </div>
                                 <ExpierenceBlock workExperience={element} />

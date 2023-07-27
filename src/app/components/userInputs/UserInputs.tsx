@@ -2,7 +2,7 @@ import DetailsInput from "./components/DetailsInput";
 import EducationInput from "./components/EducationInput";
 import ProjectsInput from "./components/ProjectsInput";
 import SkillsInput from "./components/SkillsInput";
-import WorkExpierenceInput from "./components/work-expierence/WorkExpierenceInput";
+import WorkExpierenceInput from "./components/WorkExpierenceInput";
 
 export default function UserInputs() {
     return (

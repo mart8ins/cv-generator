@@ -25,8 +25,25 @@ const CvContextProvider = ({ children }: any) => {
         description: ""
     });
 
+    const [educationAll, setEducationAll] = useState({
+        title: "EDUCATION",
+        data: []
+    });
+    const [education, setEducation] = useState({
+        id: "",
+        school: "",
+        date: "",
+        degree: "",
+        additional: ""
+    });
+
     return (
-        <CvContext.Provider value={{details, setDetails, workExperience, setWorkExperience,workExperienceAll, setWorkExperienceAll}}>
+        <CvContext.Provider value={{details, setDetails, 
+        workExperience, setWorkExperience,
+        workExperienceAll, setWorkExperienceAll,
+        education, setEducation,
+        educationAll, setEducationAll
+        }}>
             {children}
         </CvContext.Provider>
     );
