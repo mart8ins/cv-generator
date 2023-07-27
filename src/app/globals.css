@@ -58,5 +58,27 @@ body {
     margin: 50px;
 }
 .details-name {
-    font-size: 16pt;
+    font-size: 20pt;
+    margin: 5px;
+}
+
+.details-objective {
+    margin: 5px;
+}
+
+.details-contacts-container {
+    margin-top: 12px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.details-contacts-with-icon {
+    display: flex;
+    align-items: center;
+    width: 25%;
+}
+
+.details-contact {
+    margin-left: 8px;
 }
