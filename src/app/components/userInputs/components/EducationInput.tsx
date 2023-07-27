@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
 import ListIcon from "@mui/icons-material/List";
-import DeleteIcon from "@mui/icons-material/Delete";
-import ExpierenceBlock from "@/app/components/shared/ExpierenceBlock";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EducationBlock from "../../shared/EducationBlock";
 
 export default function EducatonInput() {
     const { education, setEducation, educationAll, setEducationAll } = useContext(CvContext);
@@ -30,17 +30,17 @@ export default function EducatonInput() {
         });
     }
 
-    // function deleteWorkExpierence(id: String){
-    //     const remaining = workExperienceAll.data.filter((w:any)=> {
-    //         if(id != w.id) {
-    //             return w;
-    //         }
-    //     })
-    //     setWorkExperienceAll({
-    //         ...workExperienceAll,
-    //         data: remaining
-    //     });
-    // }
+    function deleteEducation(id: String){
+        const remaining = educationAll.data.filter((w:any)=> {
+            if(id != w.id) {
+                return w;
+            }
+        })
+        setEducationAll({
+            ...educationAll,
+            data: remaining
+        });
+    }
 
     return (
         <div>
@@ -52,7 +52,7 @@ export default function EducatonInput() {
                     <div className="expierence-title-input">
                         <TextField
                             onChange={(e) =>
-                                setEducation({
+                                setEducationAll({
                                     ...educationAll,
                                     title: e.target.value.toUpperCase(),
                                 })
@@ -134,21 +134,21 @@ export default function EducatonInput() {
                 </Button>
             </div>
 
-            {/* <div className="expierence-input-group">
-                {workExperienceAll.data.length > 0 &&
-                    workExperienceAll.data.map((element: any) => {
+            <div className="expierence-input-group">
+                {educationAll.data.length > 0 &&
+                    educationAll.data.map((element: any) => {
                         return (
                             <div key={element.id} className="input-added-expierance">
                                 <div className="input-added-expierance-delete-container">
                                     <div className="input-added-expierance-delete">
-                                        <DeleteIcon onClick={()=> deleteWorkExpierence(element.id)} />
+                                        <DeleteForeverIcon onClick={()=> deleteEducation(element.id)} />
                                     </div>
                                 </div>
-                                <ExpierenceBlock workExperience={element} />
+                                <EducationBlock education={element} />
                             </div>
                         );
                     })}
-            </div> */}
+            </div>
         </div>
     );
 }

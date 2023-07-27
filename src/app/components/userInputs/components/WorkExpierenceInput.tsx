@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import ListIcon from "@mui/icons-material/List";
-import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ExpierenceBlock from "@/app/components/shared/ExpierenceBlock";
 
 export default function WorkExpierenceInput() {
@@ -141,7 +141,7 @@ export default function WorkExpierenceInput() {
                             <div key={element.id} className="input-added-expierance">
                                 <div className="input-added-expierance-delete-container">
                                     <div className="input-added-expierance-delete">
-                                        <DeleteIcon onClick={() => deleteWorkExpierence(element.id)} />
+                                        <DeleteForeverIcon onClick={() => deleteWorkExpierence(element.id)} />
                                     </div>
                                 </div>
                                 <ExpierenceBlock workExperience={element} />
