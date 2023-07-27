@@ -114,7 +114,8 @@ body {
     margin-left: 10px;
 }
 .add-new-job-btn {
-    float: right;
+    display: flex;
+    justify-content: flex-end;
 }
 /* expierence block*/
 .expierence-block {

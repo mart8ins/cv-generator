@@ -4,8 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import ListIcon from "@mui/icons-material/List";
+import ExpierenceBlock from "@/app/components/pdfPreview/components/expierencePreview/ExpierenceBlock";
 
-export default function WorkExperienceInput() {
+export default function WorkExpierenceInput() {
     const { workExperience, setWorkExperience, workExperienceAll, setWorkExperienceAll } = useContext(CvContext);
 
     function addExpieranceToList() {
@@ -118,6 +119,13 @@ export default function WorkExperienceInput() {
                 <Button onClick={addExpieranceToList} variant="outlined">
                     + Add Job
                 </Button>
+            </div>
+
+            <div className="expierence-input-group">
+                {workExperienceAll.data.length > 0 &&
+                    workExperienceAll.data.map((element: any) => {
+                        return <ExpierenceBlock key={element.id} workExperience={element} />;
+                    })}
             </div>
         </div>
     );

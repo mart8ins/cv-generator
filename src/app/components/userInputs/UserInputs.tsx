@@ -2,29 +2,29 @@ import DetailsInput from "./components/DetailsInput";
 import EducationInput from "./components/EducationInput";
 import ProjectsInput from "./components/ProjectsInput";
 import SkillsInput from "./components/SkillsInput";
-import WorkExperienceInput from "./components/work-expierence/WorkExperienceInput";
+import WorkExpierenceInput from "./components/work-expierence/WorkExpierenceInput";
 
 export default function UserInputs() {
     return (
         <div className="userInputs">
             <div className="inputs-container">
-            <DetailsInput />
+                <DetailsInput />
             </div>
 
             <div className="inputs-container">
-            <WorkExperienceInput />
+                <WorkExpierenceInput />
             </div>
 
             <div className="inputs-container">
-            <EducationInput />
+                <EducationInput />
             </div>
 
             <div className="inputs-container">
-            <ProjectsInput />
+                <ProjectsInput />
             </div>
 
             <div className="inputs-container">
-            <SkillsInput /> 
+                <SkillsInput />
             </div>
         </div>
     );
