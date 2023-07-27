@@ -40,10 +40,14 @@ body {
 .section-title {
     display: flex;
     align-items: center;
+    margin-left: 20px;
 }
 .section-identifier {
     border-radius: 50%;
     margin-right: 15px;
+}
+.section-identifier-title {
+    font-weight: bold;
 }
 
 .pdfPreview {
@@ -114,5 +118,20 @@ body {
 }
 /* expierence block*/
 .expierence-block {
-    
+    margin-top: 10px;
+    line-height: 1.2rem;
+}
+
+.expierence-company {
+    font-weight: bold;
+}
+.expierence-group {
+    display: flex;
+    justify-content: space-between;
+}
+.expierence-description {
+    margin-top: 15px;
+    text-align: justify;
+    text-indent: 1rem;
+    width: 90%;
 }

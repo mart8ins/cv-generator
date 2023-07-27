@@ -14,7 +14,7 @@ const CvContextProvider = ({ children }: any) => {
     });
 
     const [workExperienceAll, setWorkExperienceAll] = useState({
-        title: "Work Expierence",
+        title: "WORK EXPIERENCE",
         data: []
     });
     const [workExperience, setWorkExperience] = useState({

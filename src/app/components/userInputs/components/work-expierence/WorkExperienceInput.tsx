@@ -40,7 +40,7 @@ export default function WorkExperienceInput() {
                             onChange={(e) =>
                                 setWorkExperienceAll({
                                     ...workExperienceAll,
-                                    title: e.target.value,
+                                    title: e.target.value.toUpperCase(),
                                 })
                             }
                             id="standard-basic"
