@@ -36,6 +36,16 @@ body {
 }
 
 /* PREVIEW */
+
+.section-title {
+    display: flex;
+    align-items: center;
+}
+.section-identifier {
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
 .pdfPreview {
     min-width: 49%;
     max-height: 100vh;
@@ -101,4 +111,8 @@ body {
 }
 .add-new-job-btn {
     float: right;
+}
+/* expierence block*/
+.expierence-block {
+    
 }

@@ -15,7 +15,7 @@ export default function UserInputs() {
             <WorkExperienceInput />
             </div>
 
-            {/* <div className="inputs-container">
+            <div className="inputs-container">
             <EducationInput />
             </div>
 
@@ -25,7 +25,7 @@ export default function UserInputs() {
 
             <div className="inputs-container">
             <SkillsInput /> 
-            </div> */}
+            </div>
         </div>
     );
 }

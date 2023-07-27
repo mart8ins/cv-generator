@@ -1,11 +1,32 @@
 import { CvContext } from "@/app/context/context";
 import { useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import ListIcon from "@mui/icons-material/List";
 
 export default function WorkExperienceInput() {
     const { workExperience, setWorkExperience, workExperienceAll, setWorkExperienceAll } = useContext(CvContext);
+
+    function addExpieranceToList() {
+        setWorkExperienceAll({
+            ...workExperienceAll,
+            data: [
+                ...workExperienceAll.data,
+                {
+                    ...workExperience,
+                    id: uuidv4(),
+                },
+            ],
+        });
+        setWorkExperience({
+            id: "",
+            company: "",
+            job_title: "",
+            date: "",
+            description: "",
+        });
+    }
 
     return (
         <div>
@@ -45,6 +66,7 @@ export default function WorkExperienceInput() {
                     id="outlined-basic"
                     label="Company"
                     variant="outlined"
+                    value={workExperience.company}
                 />
             </div>
             <div className="expierence-input-group expierence-fields-one-line">
@@ -59,6 +81,7 @@ export default function WorkExperienceInput() {
                     id="outlined-basic"
                     label="Job title"
                     variant="outlined"
+                    value={workExperience.job_title}
                 />
                 <div className="expierence-input-group-right-item">
                     <TextField
@@ -72,6 +95,7 @@ export default function WorkExperienceInput() {
                         id="outlined-basic"
                         label="Date"
                         variant="outlined"
+                        value={workExperience.date}
                     />
                 </div>
             </div>
@@ -87,10 +111,13 @@ export default function WorkExperienceInput() {
                     id="outlined-basic"
                     label="Description"
                     variant="outlined"
+                    value={workExperience.description}
                 />
             </div>
             <div className="expierence-input-group add-new-job-btn">
-                <Button variant="outlined">+ Add Job</Button>
+                <Button onClick={addExpieranceToList} variant="outlined">
+                    + Add Job
+                </Button>
             </div>
         </div>
     );

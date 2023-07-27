@@ -1,16 +1,22 @@
 import { useContext } from "react";
 import DetailsPreview from "./components/DetailsPreview";
 import { AppThemeContext } from "@/app/context/theme-context";
+import ExpierencePreview from "./components/ExpierencePreview";
 
 export default function PdfPreview() {
-    const {theme} = useContext(AppThemeContext)
+    const { theme } = useContext(AppThemeContext);
     const scale = 0.8;
     return (
         <div className="pdfPreview">
-            <div className="pdf-document" style={{borderTopColor: theme.color, width: "793.33px", 
-                height: "1122.67px", transform: `scale(${scale})`}}>
+            <div
+                className="pdf-document"
+                style={{ borderTopColor: theme.color, width: "793.33px", height: "1122.67px", transform: `scale(${scale})` }}>
                 <div className="preview-group">
-                <DetailsPreview />
+                    <DetailsPreview />
+                </div>
+
+                <div className="preview-group">
+                    <ExpierencePreview />
                 </div>
             </div>
         </div>
