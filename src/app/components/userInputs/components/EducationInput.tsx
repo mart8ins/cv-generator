@@ -44,12 +44,12 @@ export default function EducatonInput() {
 
     return (
         <div>
-            <div className="expierence-input-group">
-                <div className="expierence-title-countainer">
-                    <div className="expierence-title-icon">
+            <div className="section-input-group">
+                <div className="section-title-countainer">
+                    <div className="section-title-icon">
                         <SchoolIcon />
                     </div>
-                    <div className="expierence-title-input">
+                    <div className="section-title-input">
                         <TextField
                             onChange={(e) =>
                                 setEducationAll({
@@ -63,12 +63,12 @@ export default function EducatonInput() {
                             value={educationAll.title}
                         />
                     </div>
-                    <div className="expierence-title-options">
+                    <div className="section-title-options">
                         <ListIcon color="disabled" />
                     </div>
                 </div>
             </div>
-            <div className="expierence-input-group">
+            <div className="section-input-group">
                 <TextField
                     fullWidth
                     onChange={(e) =>
@@ -83,7 +83,7 @@ export default function EducatonInput() {
                     value={education.school}
                 />
             </div>
-            <div className="expierence-input-group expierence-fields-one-line">
+            <div className="section-input-group section-fields-one-line">
                 <TextField
                     fullWidth
                     onChange={(e) =>
@@ -97,7 +97,7 @@ export default function EducatonInput() {
                     variant="outlined"
                     value={education.degree}
                 />
-                <div className="expierence-input-group-right-item">
+                <div className="section-input-group-right-item">
                     <TextField
                         fullWidth
                         onChange={(e) =>
@@ -113,7 +113,7 @@ export default function EducatonInput() {
                     />
                 </div>
             </div>
-            <div className="expierence-input-group">
+            <div className="section-input-group">
                 <TextField
                     fullWidth
                     onChange={(e) =>
@@ -128,19 +128,19 @@ export default function EducatonInput() {
                     value={education.additional}
                 />
             </div>
-            <div className="expierence-input-group add-new-job-btn">
+            <div className="section-input-group add-new-job-btn">
                 <Button onClick={addEducationToList} variant="outlined">
                     + Add Education
                 </Button>
             </div>
 
-            <div className="expierence-input-group">
+            <div className="section-input-group">
                 {educationAll.data.length > 0 &&
                     educationAll.data.map((element: any) => {
                         return (
-                            <div key={element.id} className="input-added-expierance">
-                                <div className="input-added-expierance-delete-container">
-                                    <div className="input-added-expierance-delete">
+                            <div key={element.id} className="input-added-section">
+                                <div className="input-added-section-delete-container">
+                                    <div className="input-added-section-delete">
                                         <DeleteForeverIcon onClick={()=> deleteEducation(element.id)} />
                                     </div>
                                 </div>

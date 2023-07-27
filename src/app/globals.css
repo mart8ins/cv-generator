@@ -25,27 +25,27 @@ body {
 }
 
 /* DETAILS INPUTS */
-.details-fields-one-line, .expierence-fields-one-line {
+.details-fields-one-line, .section-fields-one-line {
     display: flex;
 }
-.details-input-group, .expierence-input-group {
+.details-input-group, .section-input-group {
     margin: 20px;
 }
-.details-input-group-right-item, .expierence-input-group-right-item {
+.details-input-group-right-item, .section-input-group-right-item {
     margin-left: 10px;
 }
 
-.input-added-expierance {
+.input-added-section {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0px 2px 0px black;
 }
-.input-added-expierance-delete-container {
+.input-added-section-delete-container {
     display: flex;
     justify-content: flex-end;
 }
-.input-added-expierance-delete:hover {
+.input-added-section-delete:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -112,40 +112,40 @@ body {
     margin-left: 8px;
 }
 
-/* WORK EXPIERENCE */
-.expierence-title-countainer {
+.section-title-countainer {
     display: flex;
     align-items: center;
 }
-.expierence-title-icon {
+.section-title-icon {
     margin-right: 10px;
 }
-.expierence-title-input {
+.section-title-input {
     width: 100%;
     font-weight: bold;
     font-size: 20px;
 }
-.expierence-title-options {
+.section-title-options {
     margin-left: 10px;
 }
 .add-new-job-btn {
     display: flex;
     justify-content: flex-end;
 }
-/* expierence block*/
-.expierence-block {
+
+
+.section-block {
     margin-top: 10px;
     line-height: 1.2rem;
 }
 
-.expierence-company {
+.section-company {
     font-weight: bold;
 }
-.expierence-group {
+.section-group {
     display: flex;
     justify-content: space-between;
 }
-.expierence-description {
+.section-description {
     margin-top: 15px;
     text-align: justify;
     text-indent: 1rem;
