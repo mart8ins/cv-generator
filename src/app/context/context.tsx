@@ -5,12 +5,12 @@ export const CvContext = createContext({} as any);
 
 const CvContextProvider = ({ children }: any) => {
     const [details, setDetails] = useState({
-        name: "",
-        objective: "",
-        email: "",
-        phone: "",
-        website: "",
-        location: ""
+        name: "Martins Meisters",
+        objective: "Software enginer",
+        email: "mart8ins@gmail.com",
+        phone: "29141645",
+        website: "www.musite.lv",
+        location: "Riga"
     });
 
     const [workExperienceAll, setWorkExperienceAll] = useState({
