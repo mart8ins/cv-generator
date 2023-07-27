@@ -13,7 +13,10 @@ const CvContextProvider = ({ children }) => {
         location: ""
     });
 
-    const [workExperienceAll, setWorkExperienceAll] = useState([]);
+    const [workExperienceAll, setWorkExperienceAll] = useState({
+        title: "Work Expierence",
+        data: []
+    });
     const [workExperience, setWorkExperience] = useState({
         id: uuidv4(),
         company: "",
@@ -25,7 +28,7 @@ const CvContextProvider = ({ children }) => {
 
    
     return (
-        <CvContext.Provider value={{details, setDetails}}>
+        <CvContext.Provider value={{details, setDetails, workExperience, setWorkExperience,workExperienceAll, setWorkExperienceAll}}>
             {children}
         </CvContext.Provider>
     );

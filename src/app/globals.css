@@ -25,13 +25,13 @@ body {
 }
 
 /* DETAILS INPUTS */
-.details-fields-one-line {
+.details-fields-one-line, .expierence-fields-one-line {
     display: flex;
 }
-.details-input-group {
+.details-input-group, .expierence-input-group {
     margin: 20px;
 }
-.details-input-group-right-item {
+.details-input-group-right-item, .expierence-input-group-right-item {
     margin-left: 10px;
 }
 
@@ -81,4 +81,24 @@ body {
 
 .details-contact {
     margin-left: 8px;
+}
+
+/* WORK EXPIERENCE */
+.expierence-title-countainer {
+    display: flex;
+    align-items: center;
+}
+.expierence-title-icon {
+    margin-right: 10px;
+}
+.expierence-title-input {
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+}
+.expierence-title-options {
+    margin-left: 10px;
+}
+.add-new-job-btn {
+    float: right;
 }

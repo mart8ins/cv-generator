@@ -1,0 +1,97 @@
+import { CvContext } from "@/app/context/context";
+import { useContext } from "react";
+import { TextField, Button } from "@mui/material";
+import WorkIcon from "@mui/icons-material/Work";
+import ListIcon from "@mui/icons-material/List";
+
+export default function WorkExperienceInput() {
+    const { workExperience, setWorkExperience, workExperienceAll, setWorkExperienceAll } = useContext(CvContext);
+
+    return (
+        <div>
+            <div className="expierence-input-group">
+                <div className="expierence-title-countainer">
+                    <div className="expierence-title-icon">
+                        <WorkIcon />
+                    </div>
+                    <div className="expierence-title-input">
+                        <TextField
+                            onChange={(e) =>
+                                setWorkExperienceAll({
+                                    ...workExperienceAll,
+                                    title: e.target.value,
+                                })
+                            }
+                            id="standard-basic"
+                            fullWidth
+                            variant="standard"
+                            value={workExperienceAll.title}
+                        />
+                    </div>
+                    <div className="expierence-title-options">
+                        <ListIcon color="disabled" />
+                    </div>
+                </div>
+            </div>
+            <div className="expierence-input-group">
+                <TextField
+                    fullWidth
+                    onChange={(e) =>
+                        setWorkExperience({
+                            ...workExperience,
+                            company: e.target.value,
+                        })
+                    }
+                    id="outlined-basic"
+                    label="Company"
+                    variant="outlined"
+                />
+            </div>
+            <div className="expierence-input-group expierence-fields-one-line">
+                <TextField
+                    fullWidth
+                    onChange={(e) =>
+                        setWorkExperience({
+                            ...workExperience,
+                            job_title: e.target.value,
+                        })
+                    }
+                    id="outlined-basic"
+                    label="Job title"
+                    variant="outlined"
+                />
+                <div className="expierence-input-group-right-item">
+                    <TextField
+                        fullWidth
+                        onChange={(e) =>
+                            setWorkExperience({
+                                ...workExperience,
+                                date: e.target.value,
+                            })
+                        }
+                        id="outlined-basic"
+                        label="Date"
+                        variant="outlined"
+                    />
+                </div>
+            </div>
+            <div className="expierence-input-group">
+                <TextField
+                    fullWidth
+                    onChange={(e) =>
+                        setWorkExperience({
+                            ...workExperience,
+                            description: e.target.value,
+                        })
+                    }
+                    id="outlined-basic"
+                    label="Description"
+                    variant="outlined"
+                />
+            </div>
+            <div className="expierence-input-group add-new-job-btn">
+                <Button variant="outlined">+ Add Job</Button>
+            </div>
+        </div>
+    );
+}
