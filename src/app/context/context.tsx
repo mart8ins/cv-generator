@@ -72,6 +72,13 @@ const CvContextProvider = ({ children }: any) => {
         link: "",
     });
 
+    const [skillsAll, setSkillsAll] = useState({
+        title: "SKILLS",
+        data: [
+            
+        ],
+    });
+
     return (
         <CvContext.Provider
             value={{
@@ -86,7 +93,8 @@ const CvContextProvider = ({ children }: any) => {
                 educationAll,
                 setEducationAll,
                 project, setProject,
-                projectsAll, setProjectsAll
+                projectsAll, setProjectsAll,
+                skillsAll, setSkillsAll
 
             }}>
             {children}
