@@ -74,10 +74,20 @@ const CvContextProvider = ({ children }: any) => {
 
     const [skillsAll, setSkillsAll] = useState({
         title: "SKILLS",
-        data: [
-            
-        ],
+        data: [{
+            id: "1",
+            name: "Code",
+            rate: 5
+        }],
     });
+
+    const [skill, setSkill] = useState({
+        id: "",
+        name: "",
+        rate: null,
+    });
+
+    console.log(skillsAll);
 
     return (
         <CvContext.Provider
@@ -92,10 +102,14 @@ const CvContextProvider = ({ children }: any) => {
                 setEducation,
                 educationAll,
                 setEducationAll,
-                project, setProject,
-                projectsAll, setProjectsAll,
-                skillsAll, setSkillsAll
-
+                project,
+                setProject,
+                projectsAll,
+                setProjectsAll,
+                skillsAll,
+                setSkillsAll,
+                skill,
+                setSkill,
             }}>
             {children}
         </CvContext.Provider>

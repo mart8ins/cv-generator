@@ -1,9 +1,10 @@
 import { CvContext } from "@/app/context/context";
 import { useContext } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { TextField, Button } from "@mui/material";
-import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+import { TextField } from "@mui/material";
+import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
 import ListIcon from "@mui/icons-material/List";
+import SkillsInputBlock from "./SkillsInputBlock";
+import SkillsPreviewBlock from "./SkillsPreviewBlock";
 
 export default function SkillsInput() {
     const { skillsAll, setSkillsAll } = useContext(CvContext);
@@ -34,7 +35,10 @@ export default function SkillsInput() {
                     </div>
                 </div>
             </div>
-
+            <div className="section-input-group">
+                <SkillsInputBlock />
+                <SkillsPreviewBlock />
+            </div>
         </div>
     );
 }

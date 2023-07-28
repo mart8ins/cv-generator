@@ -4,6 +4,7 @@ import { AppThemeContext } from "@/app/context/theme-context";
 import ExpierencePreview from "./components/ExpierencePreview";
 import EducationPreview from "./components/EducationPreview";
 import ProjectsPreview from "./components/ProjectsPreview";
+import SkillsPreview from "./components/SkillsPreview";
 
 export default function PdfPreview() {
     const { theme } = useContext(AppThemeContext);
@@ -27,6 +28,10 @@ export default function PdfPreview() {
 
                 <div className="preview-group">
                     <ProjectsPreview/>
+                </div>
+
+                <div className="preview-group">
+                    <SkillsPreview/>
                 </div>
 
             </div>
