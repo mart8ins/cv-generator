@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 export const CvContext = createContext({} as any);
 
 const CvContextProvider = ({ children }: any) => {
+    
     const [details, setDetails] = useState({
         name: "Martins Meisters",
         objective: "Software enginer",
@@ -107,7 +108,7 @@ const CvContextProvider = ({ children }: any) => {
                 skillsAll,
                 setSkillsAll,
                 skill,
-                setSkill,
+                setSkill
             }}>
             {children}
         </CvContext.Provider>

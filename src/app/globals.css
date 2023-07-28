@@ -72,6 +72,8 @@ body {
     font-weight: bold;
 }
 
+
+/* DETAILS PREVIEW*/
 .pdfPreview {
     min-width: 49%;
     max-height: 100vh;
@@ -80,19 +82,50 @@ body {
     overflow: auto;
 }
 
-.preview-group {
-    width: 85%;
-    margin: 25px auto;
-    margin-left: 40px;
+.pdf-document-options {
+    padding: 5px;
+    border-radius: 10px;
+    width: 200px;
+    position: fixed;
+    background-color: black;
+    color: white;
+    z-index: 10;
+    right: 30px;
+    top: 35px;
 }
 
-/* DETAILS PREVIEW*/
 .pdf-document {
     background-color: whitesmoke;
     border-top: 8px solid;
     transform-origin: top left;
     margin: 50px;
 }
+
+.pdf-save-container {
+    background-color: black;
+    max-width: max-content;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    
+}
+.pdf-save-container>div {
+    margin-right: 5px;
+}
+.pdf-save-container:hover {
+    cursor: pointer;
+    background-color: rgb(74, 74, 74);
+    transition: 0.3s;
+}
+
+.preview-group {
+    width: 85%;
+    margin: 25px auto;
+    margin-left: 40px;
+}
+
 .details-name {
     font-size: 20pt;
     margin: 5px;
@@ -192,7 +225,7 @@ body {
     justify-content: flex-end;
 }
 
-.skills-input-preview-delete>div:hover {
+.skills-input-preview-delete > div:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -231,7 +264,7 @@ body {
     margin-bottom: 20px;
 }
 
-.settings-title-container>div {
+.settings-title-container > div {
     font-size: 16pt;
     margin-left: 10px;
 }
@@ -244,22 +277,20 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
-    
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-    
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
     border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -5,15 +5,16 @@ import ExpierencePreview from "./components/ExpierencePreview";
 import EducationPreview from "./components/EducationPreview";
 import ProjectsPreview from "./components/ProjectsPreview";
 import SkillsPreview from "./components/SkillsPreview";
+import PDFoptions from "./components/PdfOptions";
 
 export default function PdfPreview() {
-    const { theme } = useContext(AppThemeContext);
-    const scale = 0.8;
+    const { theme, pdfScale } = useContext(AppThemeContext);
     return (
         <div className="pdfPreview">
+            <PDFoptions/>
             <div
                 className="pdf-document"
-                style={{ borderTopColor: theme.color, width: "793.33px", height: "1122.67px", transform: `scale(${scale})` }}>
+                style={{ borderTopColor: theme.color, width: "793.33px", height: "1122.67px", transform: `scale(${pdfScale})` }}>
                 <div className="preview-group">
                     <DetailsPreview />
                 </div>
@@ -33,7 +34,6 @@ export default function PdfPreview() {
                 <div className="preview-group">
                     <SkillsPreview/>
                 </div>
-
             </div>
         </div>
     );
