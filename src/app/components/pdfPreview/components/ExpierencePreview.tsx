@@ -17,7 +17,7 @@ export default function ExpierencePreview() {
                     <div
                         className="section-identifier"
                         style={{ width: theme.size, height: theme.size, backgroundColor: theme.color }}></div>
-                    <div className="section-identifier-title">{workExperienceAll.title}</div>
+                    <div className="section-identifier-title" style={{fontSize: theme.size}}>{workExperienceAll.title}</div>
                 </div>
             )}
 

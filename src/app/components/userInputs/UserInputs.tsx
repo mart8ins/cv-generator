@@ -1,6 +1,7 @@
 import DetailsInput from "./components/DetailsInput";
 import EducationInput from "./components/EducationInput";
 import ProjectsInput from "./components/ProjectsInput";
+import SettingsInput from "./components/SettingsInput";
 import SkillsInput from "./components/skillsInput/SkillsInput";
 import WorkExpierenceInput from "./components/WorkExpierenceInput";
 
@@ -26,6 +27,12 @@ export default function UserInputs() {
             <div className="inputs-container">
                 <SkillsInput />
             </div>
+
+            <div className="inputs-container">
+                <SettingsInput />
+            </div>
+
+            <div className="inputs-container spacer-div"></div>
         </div>
     );
 }

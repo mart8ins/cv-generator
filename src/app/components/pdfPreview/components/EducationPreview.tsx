@@ -17,7 +17,7 @@ export default function EducationPreview() {
                     <div
                         className="section-identifier"
                         style={{ width: theme.size, height: theme.size, backgroundColor: theme.color }}></div>
-                    <div className="section-identifier-title">{educationAll.title}</div>
+                    <div className="section-identifier-title" style={{fontSize: theme.size}}>{educationAll.title}</div>
                 </div>
             )}
 

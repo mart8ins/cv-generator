@@ -13,7 +13,7 @@ export default function SkillsPreview() {
                     <div
                         className="section-identifier"
                         style={{ width: theme.size, height: theme.size, backgroundColor: theme.color }}></div>
-                    <div className="section-identifier-title">{skillsAll.title}</div>
+                    <div className="section-identifier-title" style={{fontSize: theme.size}}>{skillsAll.title}</div>
                 </div>
             )}
 

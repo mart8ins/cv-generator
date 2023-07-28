@@ -17,7 +17,7 @@ export default function ProjectsPreview() {
                     <div
                         className="section-identifier"
                         style={{ width: theme.size, height: theme.size, backgroundColor: theme.color }}></div>
-                    <div className="section-identifier-title">{projectsAll.title}</div>
+                    <div className="section-identifier-title" style={{fontSize: theme.size}}>{projectsAll.title}</div>
                 </div>
             )}
 

@@ -87,8 +87,6 @@ const CvContextProvider = ({ children }: any) => {
         rate: null,
     });
 
-    console.log(skillsAll);
-
     return (
         <CvContext.Provider
             value={{
