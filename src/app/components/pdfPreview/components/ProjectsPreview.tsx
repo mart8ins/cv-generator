@@ -9,10 +9,10 @@ export default function ProjectsPreview() {
     return (
         <div>
             {(projectsAll.data.length > 0 ||
-                project.school.length > 0 ||
-                project.degree.length > 0 ||
+                project.name.length > 0 ||
+                project.description.length > 0 ||
                 project.date.length > 0 ||
-                project.additional.length > 0) && (
+                project.link.length > 0) && (
                 <div className="section-title">
                     <div
                         className="section-identifier"
