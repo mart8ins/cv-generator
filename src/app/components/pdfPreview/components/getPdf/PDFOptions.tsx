@@ -1,10 +1,10 @@
 import { AppThemeContext } from "@/app/context/theme-context";
-import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import { Slider } from "@mui/material";
+import dynamic from "next/dynamic";
 import { useContext } from "react";
+const GeneratePDF = dynamic(() => import("./GeneratePDF"), { ssr: false });
 
-
-export default function PDFoptions({handleGeneratePDF}) {
+export default function PDFoptions({ pdfRef }: any) {
     const { pdfScale, setPdfScale } = useContext(AppThemeContext);
 
     return (
@@ -18,15 +18,12 @@ export default function PDFoptions({handleGeneratePDF}) {
                     marks
                     min={0.5}
                     max={1.5}
-                    onChange={(e) => setPdfScale(e.target.value)}
+                    onChange={(e: any) => setPdfScale(e.target.value)}
                     value={pdfScale}
                     style={{ color: "white" }}
                 />
             </div>
-            <div onClick={()=> handleGeneratePDF()} className="pdf-save-container">
-                <div>Save</div>
-                <PictureAsPdfIcon />
-            </div>
+            <GeneratePDF html={pdfRef} />
         </div>
     );
 }

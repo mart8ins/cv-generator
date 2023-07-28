@@ -5,30 +5,15 @@ import ExpierencePreview from "./components/ExpierencePreview";
 import EducationPreview from "./components/EducationPreview";
 import ProjectsPreview from "./components/ProjectsPreview";
 import SkillsPreview from "./components/SkillsPreview";
-import PDFoptions from "./components/PdfOptions";
-import html2pdf from "html2pdf.js";
+import PDFoptions from "./components/getPdf/PDFOptions";
 
 export default function PdfPreview() {
-    const { theme, pdfScale, setPdfScale } = useContext(AppThemeContext);
+    const { theme, pdfScale } = useContext(AppThemeContext);
     const pdfRef = useRef(null);
-
-    const handleGeneratePDF = () => {
-        setPdfScale(0.8);
-        const element = pdfRef.current;
-        const opt = {
-            margin: 10,
-            filename: "cv.pdf",
-            image: { type: "jpeg", quality: 1 },
-            html2canvas: { scale: 1 },
-            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-        };
-
-        html2pdf().from(element).set(opt).save();
-    };
 
     return (
         <div className="pdfPreview">
-            <PDFoptions handleGeneratePDF={handleGeneratePDF} />
+            <PDFoptions pdfRef={pdfRef} />
             <div
                 ref={pdfRef}
                 className="pdf-document"
