@@ -165,14 +165,14 @@ body {
     align-items: center;
     justify-content: center;
 }
-.skills-preview-block {
+.skills-input-preview-block {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.skills-preview-element {
+.skills-input-preview-element {
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 2px rgb(168, 149, 149);
@@ -181,18 +181,18 @@ body {
     width: 30%;
 }
 
-.skills-preview-delete {
+.skills-input-preview-delete {
     margin-bottom: 5px;
     display: flex;
     justify-content: flex-end;
 }
 
-.skills-preview-delete>div:hover {
+.skills-input-preview-delete>div:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.skills-preview {
+.skills-input-preview {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -200,6 +200,22 @@ body {
     text-align: center;
 }
 
-.skills-preview-rating {
+.skills-input-preview-rating {
     margin-bottom: 5px;
+}
+
+.skills-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+.skills-preview-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 15px;
+    max-width: 15%;
+    text-align: center;
 }

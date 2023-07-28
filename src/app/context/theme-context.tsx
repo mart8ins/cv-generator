@@ -4,7 +4,7 @@ export const AppThemeContext = createContext({} as any);
 
 const AppThemeContextProvider = ({ children }: any) => {
     const [theme, setTheme] = useState({
-        color: "#665c5b",
+        color: "green",
         size: "10pt",
         iconSize: "small"
     })
