@@ -37,11 +37,11 @@ export default function SettingsInput() {
                 <SettingsIcon /> <div>Settings</div>
             </div>
             <div className="settings-container">
-                <TextField onChange={(e)=> setCustomColor(e.target.value)} value={customColor} style={{ width: "50%" }} id="standard-basic" label="Custom color (any valid CSS color name)" variant="standard" />
+                <TextField onChange={(e)=> setCustomColor(e.target.value)} value={customColor} style={{ width: "70%" }} id="standard-basic" label="Custom color (any valid CSS color name)" variant="standard" />
             </div>
 
             <div className="settings-container">
-                <TextField onChange={(e)=> setCustomFontSize(e.target.value)} value={customFontSize} style={{ width: "30%" }} id="standard-basic" label="Custom font size (pt)" variant="standard" />
+                <TextField onChange={(e)=> setCustomFontSize(e.target.value)} value={customFontSize} style={{ width: "70%" }} id="standard-basic" label="Custom font size (pt)" variant="standard" />
             </div>
         </div>
     );

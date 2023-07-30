@@ -14,11 +14,12 @@ export default function WorkExpierenceInput() {
         setWorkExperienceAll({
             ...workExperienceAll,
             data: [
-                ...workExperienceAll.data,
                 {
                     ...workExperience,
                     id: uuidv4(),
                 },
+                ...workExperienceAll.data,
+                
             ],
         });
         setWorkExperience({

@@ -6,7 +6,7 @@ body {
     display: flex;
 }
 .userInputs {
-    width: 49%;
+    width: 70%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@ body {
 
 /* ALL INPUTS */
 .inputs-container {
-    width: 70%;
+    width: 85%;
     background-color: whitesmoke;
     margin-bottom: 20px;
     padding: 15px;
@@ -75,7 +75,7 @@ body {
 
 /* DETAILS PREVIEW*/
 .pdfPreview {
-    min-width: 49%;
+    /* min-width: 49%; */
     max-height: 100vh;
     max-width: max-content;
     height: min-content;
@@ -95,7 +95,7 @@ body {
 }
 
 .pdf-document {
-    background-color: whitesmoke;
+    background-color: white;
     border-top: 8px solid;
     transform-origin: top left;
     margin: 50px;

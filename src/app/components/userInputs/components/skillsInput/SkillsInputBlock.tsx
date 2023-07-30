@@ -33,7 +33,7 @@ export default function SkillsInputBlock() {
             <div className="skills-fields-container">
                 <TextField
                     id="outlined-basic"
-                    label="Outlined"
+                    label="Skill"
                     variant="outlined"
                     value={skill.name}
                     onChange={(e) => {

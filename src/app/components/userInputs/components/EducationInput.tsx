@@ -14,11 +14,11 @@ export default function EducatonInput() {
         setEducationAll({
             ...educationAll,
             data: [
-                ...educationAll.data,
                 {
                     ...education,
                     id: uuidv4(),
                 },
+                ...educationAll.data,
             ],
         });
         setEducation({

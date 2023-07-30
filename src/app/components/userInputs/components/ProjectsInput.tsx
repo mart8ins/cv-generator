@@ -14,11 +14,12 @@ export default function ProjectsInput() {
         setProjectsAll({
             ...projectsAll,
             data: [
-                ...projectsAll.data,
                 {
                     ...project,
                     id: uuidv4(),
                 },
+                ...projectsAll.data,
+                
             ],
         });
         setProject({
