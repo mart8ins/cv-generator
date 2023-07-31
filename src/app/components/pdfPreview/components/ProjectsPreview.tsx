@@ -24,10 +24,10 @@ export default function ProjectsPreview() {
             <div>
                 {projectsAll.data.length > 0 &&
                     projectsAll.data.map((element: ProjectsType) => {
-                        return <ProjectBlock key={element.id} project={element}/>;
+                        return <ProjectBlock inputView={false} key={element.id} project={element}/>;
                     })}
             </div>
-            <ProjectBlock project={project}/>
+            <ProjectBlock inputView={false} project={project}/>
         </div>
     );
 }

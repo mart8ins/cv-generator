@@ -24,10 +24,10 @@ export default function EducationPreview() {
             <div>
                 {educationAll.data.length > 0 &&
                     educationAll.data.map((element: EducationType) => {
-                        return <EducationBlock key={element.id} education={element}/>;
+                        return <EducationBlock inputView={false} key={element.id} education={element}/>;
                     })}
             </div>
-            <EducationBlock education={education}/>
+            <EducationBlock inputView={false} education={education}/>
         </div>
     );
 }

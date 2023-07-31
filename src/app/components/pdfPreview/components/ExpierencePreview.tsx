@@ -24,10 +24,10 @@ export default function ExpierencePreview() {
             <div>
                 {workExperienceAll.data.length > 0 &&
                     workExperienceAll.data.map((element: WorkExpierenceType) => {
-                        return <ExpierenceBlock key={element.id} workExperience={element} />;
+                        return <ExpierenceBlock inputView={false} key={element.id} workExperience={element} />;
                     })}
             </div>
-            <ExpierenceBlock workExperience={workExperience} />
+            <ExpierenceBlock inputView={false} workExperience={workExperience} />
         </div>
     );
 }

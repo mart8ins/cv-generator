@@ -1,10 +1,10 @@
 import { AppThemeContext } from "@/app/context/theme-context";
 import { useContext } from "react";
 
-export default function ExpierenceBlock({workExperience}: {workExperience: WorkExpierenceType}){
-    const { theme } = useContext(AppThemeContext);
+export default function ExpierenceBlock({workExperience, inputView}: {workExperience: WorkExpierenceType, inputView: boolean}){
+    const { theme, defaultSize } = useContext(AppThemeContext);
     return (
-        <div className="section-block" style={{ fontSize: theme.size }}>
+        <div className="section-block" style={inputView ? { fontSize: defaultSize } : { fontSize: theme.size }}>
                 <div className="section-company">{workExperience.company}</div>
                 <div className="section-group">
                     <div>{workExperience.job_title}</div>

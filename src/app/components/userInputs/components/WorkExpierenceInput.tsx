@@ -174,7 +174,7 @@ export default function WorkExpierenceInput() {
                                         <DeleteForeverIcon onClick={() => deleteWorkExpierence(element.id)} />
                                     </div>
                                 </div>
-                                <ExpierenceBlock workExperience={element} />
+                                <ExpierenceBlock inputView={true} workExperience={element} />
                             </div>
                         );
                     })}

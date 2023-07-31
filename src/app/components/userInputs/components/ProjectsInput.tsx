@@ -177,7 +177,7 @@ export default function ProjectsInput() {
                                         <DeleteForeverIcon onClick={() => deleteProject(element.id)} />
                                     </div>
                                 </div>
-                                <ProjectBlock project={element} />
+                                <ProjectBlock inputView={true} project={element} />
                             </div>
                         );
                     })}

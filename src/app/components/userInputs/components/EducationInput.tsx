@@ -176,7 +176,7 @@ export default function EducatonInput() {
                                         <DeleteForeverIcon onClick={()=> deleteEducation(element.id)} />
                                     </div>
                                 </div>
-                                <EducationBlock education={element} />
+                                <EducationBlock inputView={true} education={element} />
                             </div>
                         );
                     })}
