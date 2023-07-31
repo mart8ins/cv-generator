@@ -2,6 +2,7 @@ import { CvContext } from "@/app/context/context";
 import { useContext } from "react";
 import { Typography, Rating } from "@mui/material";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function SkillsPreviewBlock() {
     const { skillsAll, setSkillsAll } = useContext(CvContext);
@@ -13,6 +14,11 @@ export default function SkillsPreviewBlock() {
             }
         })
         setSkillsAll({
+            ...skillsAll,
+            data: remaining
+        });
+
+        LocalStorageActions.setItem("skillsAll", {
             ...skillsAll,
             data: remaining
         });

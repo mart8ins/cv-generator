@@ -6,19 +6,33 @@ import SchoolIcon from "@mui/icons-material/School";
 import ListIcon from "@mui/icons-material/List";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EducationBlock from "../../shared/EducationBlock";
+import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function EducatonInput() {
     const { education, setEducation, educationAll, setEducationAll } = useContext(CvContext);
 
     function addEducationToList() {
+        const id = uuidv4();
+
         setEducationAll({
             ...educationAll,
             data: [
                 {
                     ...education,
-                    id: uuidv4(),
+                    id
                 },
                 ...educationAll.data,
+            ],
+        });
+        LocalStorageActions.setItem("educationAll", {
+            ...educationAll,
+            data: [
+                {
+                    ...education,
+                    id
+                },
+                ...educationAll.data,
+                
             ],
         });
         setEducation({
@@ -37,6 +51,10 @@ export default function EducatonInput() {
             }
         })
         setEducationAll({
+            ...educationAll,
+            data: remaining
+        });
+        LocalStorageActions.setItem("educationAll", {
             ...educationAll,
             data: remaining
         });

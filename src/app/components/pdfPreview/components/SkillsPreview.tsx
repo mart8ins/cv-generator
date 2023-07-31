@@ -8,7 +8,7 @@ export default function SkillsPreview() {
     const { theme } = useContext(AppThemeContext);
     return (
         <div>
-            {(skillsAll.data.length > 0 || skill.name.length > 0 || skill.rate != null) && (
+            {(skillsAll.data.length > 0 || skill.name.length > 0 || skill.rate != 0) && (
                 <div className="section-title">
                     <div
                         className="section-identifier"
@@ -28,7 +28,7 @@ export default function SkillsPreview() {
                         );
                     })}
 
-                {(skill.name.length > 0 || skill.rate != null) && (
+                {(skill.name.length > 0 || skill.rate != 0) && (
                     <div className="skills-preview-element">
                         <Rating size="small" style={{ color: theme.color }} name="read-only" value={skill.rate} readOnly />
                         <Typography style={{ fontSize: theme.size }}  component="legend">{skill.name}</Typography>

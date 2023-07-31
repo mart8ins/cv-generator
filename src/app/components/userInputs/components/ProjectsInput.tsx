@@ -6,20 +6,31 @@ import WebIcon from "@mui/icons-material/Web";
 import ListIcon from "@mui/icons-material/List";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ProjectBlock from "../../shared/ProjectBlock";
+import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function ProjectsInput() {
     const { project, setProject, projectsAll, setProjectsAll } = useContext(CvContext);
 
     function addProjectToList() {
+        const id = uuidv4();
         setProjectsAll({
             ...projectsAll,
             data: [
                 {
                     ...project,
-                    id: uuidv4(),
+                    id,
                 },
                 ...projectsAll.data,
-                
+            ],
+        });
+        LocalStorageActions.setItem("projectsAll", {
+            ...projectsAll,
+            data: [
+                {
+                    ...project,
+                    id,
+                },
+                ...projectsAll.data,
             ],
         });
         setProject({
@@ -31,15 +42,20 @@ export default function ProjectsInput() {
         });
     }
 
-    function deleteProject(id: String){
-        const remaining = projectsAll.data.filter((w:ProjectsType)=> {
-            if(id != w.id) {
+    function deleteProject(id: String) {
+        const remaining = projectsAll.data.filter((w: ProjectsType) => {
+            if (id != w.id) {
                 return w;
             }
-        })
+        });
         setProjectsAll({
             ...projectsAll,
-            data: remaining
+            data: remaining,
+        });
+
+        LocalStorageActions.setItem("projectsAll", {
+            ...projectsAll,
+            data: remaining,
         });
     }
 
@@ -130,7 +146,7 @@ export default function ProjectsInput() {
                     value={project.description}
                 />
             </div>
-            
+
             <div className="section-input-group add-new-job-btn">
                 <Button onClick={addProjectToList} variant="outlined">
                     + Add Project
@@ -144,10 +160,10 @@ export default function ProjectsInput() {
                             <div key={element.id} className="input-added-section">
                                 <div className="input-added-section-delete-container">
                                     <div className="input-added-section-delete">
-                                        <DeleteForeverIcon onClick={()=> deleteProject(element.id)} />
+                                        <DeleteForeverIcon onClick={() => deleteProject(element.id)} />
                                     </div>
                                 </div>
-                                <ProjectBlock project={element}/>
+                                <ProjectBlock project={element} />
                             </div>
                         );
                     })}

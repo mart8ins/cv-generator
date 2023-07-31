@@ -1,30 +1,26 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useState, useEffect } from "react";
+import { LocalStorageActions } from "./localStorage";
 
 export const CvContext = createContext({} as AppContextData);
 
-const CvContextProvider = ({ children }: {children: ReactNode}) => {
-    
+const CvContextProvider = ({ children }: { children: ReactNode }) => {
     const [details, setDetails] = useState({
-        name: "Martins Meisters",
-        objective: "Software enginer",
-        email: "mart8ins@gmail.com",
-        phone: "29141645",
-        website: "www.musite.lv",
-        location: "Riga",
+        name: "",
+        objective: "",
+        email: "",
+        phone: "",
+        website: "",
+        location: "",
     });
 
-    const [workExperienceAll, setWorkExperienceAll] = useState({
-        title: "WORK EXPIERENCE",
-        data: [
-            {
-                id: "1",
-                company: "Codelex",
-                job_title: "Programmer",
-                date: "2023 - present",
-                description: "Im coding!!!",
-            },
-        ],
-    });
+
+    useEffect(() => {
+        const detailsFromLS: any = LocalStorageActions.getItem("details");
+        if (detailsFromLS) {
+            setDetails(detailsFromLS);
+        }
+    }, []);
+
     const [workExperience, setWorkExperience] = useState({
         id: "",
         company: "",
@@ -33,18 +29,18 @@ const CvContextProvider = ({ children }: {children: ReactNode}) => {
         description: "",
     });
 
-    const [educationAll, setEducationAll] = useState({
-        title: "EDUCATION",
-        data: [
-            {
-                id: "1",
-                school: "University of Latvia",
-                date: "2016",
-                degree: "Bachlerors degree",
-                additional: "I was a good student.",
-            },
-        ],
+    const [workExperienceAll, setWorkExperienceAll] = useState({
+        title: "WORK EXPIERENCE",
+        data: [],
     });
+
+    useEffect(() => {
+        const detailsFromLS = LocalStorageActions.getItem("workExperienceAll");
+        if (detailsFromLS) {
+            setWorkExperienceAll(detailsFromLS);
+        }
+    }, []);
+
     const [education, setEducation] = useState({
         id: "",
         school: "",
@@ -53,18 +49,18 @@ const CvContextProvider = ({ children }: {children: ReactNode}) => {
         additional: "",
     });
 
-    const [projectsAll, setProjectsAll] = useState({
-        title: "PROJECTS",
-        data: [
-            {
-                id: "1",
-                name: "Flight planner",
-                date: "2016",
-                description: "Codelex project",
-                link: "https://github.com/mart8ins/flight-planner",
-            },
-        ],
+    const [educationAll, setEducationAll] = useState({
+        title: "EDUCATION",
+        data: [],
     });
+
+    useEffect(() => {
+        const detailsFromLS = LocalStorageActions.getItem("educationAll");
+        if (detailsFromLS) {
+            setEducationAll(detailsFromLS);
+        }
+    }, []);
+
     const [project, setProject] = useState({
         id: "",
         name: "",
@@ -73,20 +69,35 @@ const CvContextProvider = ({ children }: {children: ReactNode}) => {
         link: "",
     });
 
-    const [skillsAll, setSkillsAll] = useState({
-        title: "SKILLS",
-        data: [{
-            id: "1",
-            name: "Code",
-            rate: 5
-        }],
+    const [projectsAll, setProjectsAll] = useState({
+        title: "PROJECTS",
+        data: [],
     });
+
+    useEffect(() => {
+        const detailsFromLS = LocalStorageActions.getItem("projectsAll");
+        if (detailsFromLS) {
+            setProjectsAll(detailsFromLS);
+        }
+    }, []);
 
     const [skill, setSkill] = useState({
         id: "",
         name: "",
         rate: 0,
     });
+
+    const [skillsAll, setSkillsAll] = useState({
+        title: "SKILLS",
+        data: [],
+    });
+
+    useEffect(() => {
+        const detailsFromLS = LocalStorageActions.getItem("skillsAll");
+        if (detailsFromLS) {
+            setSkillsAll(detailsFromLS);
+        }
+    }, []);
 
     return (
         <CvContext.Provider

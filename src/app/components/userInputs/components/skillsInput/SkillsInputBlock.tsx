@@ -2,6 +2,7 @@ import { CvContext } from "@/app/context/context";
 import { v4 as uuidv4 } from "uuid";
 import { TextField, Rating, Button } from "@mui/material";
 import { useContext, useEffect } from "react";
+import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function SkillsInputBlock() {
     const { skill, setSkill, skillsAll, setSkillsAll } = useContext(CvContext);
@@ -21,10 +22,20 @@ export default function SkillsInputBlock() {
                 skill
             ]
         })
+
+        LocalStorageActions.setItem("skillsAll", {
+            ...skillsAll,
+            data: [
+                ...skillsAll.data,
+                skill
+            ]
+        });
+
+
         setSkill({
             id: uuidv4(),
             name: "",
-            rate: null
+            rate: 0
         })
     }
 
@@ -47,7 +58,7 @@ export default function SkillsInputBlock() {
                     name="size-large"
                     value={skill.rate}
                     size="large"
-                    onChange={(e, newValue: number | null) => {
+                    onChange={(e:any, newValue: any) => {
                         setSkill({
                             ...skill,
                             rate: newValue,

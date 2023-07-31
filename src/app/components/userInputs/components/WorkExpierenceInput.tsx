@@ -6,17 +6,30 @@ import WorkIcon from "@mui/icons-material/Work";
 import ListIcon from "@mui/icons-material/List";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ExpierenceBlock from "@/app/components/shared/ExpierenceBlock";
+import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function WorkExpierenceInput() {
     const { workExperience, setWorkExperience, workExperienceAll, setWorkExperienceAll } = useContext(CvContext);
 
     function addExpieranceToList() {
+        const id = uuidv4();
         setWorkExperienceAll({
             ...workExperienceAll,
             data: [
                 {
                     ...workExperience,
-                    id: uuidv4(),
+                    id
+                },
+                ...workExperienceAll.data,
+                
+            ],
+        });
+        LocalStorageActions.setItem("workExperienceAll", {
+            ...workExperienceAll,
+            data: [
+                {
+                    ...workExperience,
+                    id
                 },
                 ...workExperienceAll.data,
                 
@@ -38,6 +51,10 @@ export default function WorkExpierenceInput() {
             }
         });
         setWorkExperienceAll({
+            ...workExperienceAll,
+            data: remaining,
+        });
+        LocalStorageActions.setItem("workExperienceAll", {
             ...workExperienceAll,
             data: remaining,
         });

@@ -11,12 +11,18 @@ export default function DetailsPreview() {
     const { theme } = useContext(AppThemeContext);
     return (
         <div>
-            <div className="details-name" style={{ color: theme.color }}>
-                {details.name}
-            </div>
-            <div className="details-objective" style={{ fontSize: theme.size }}>
-                {details.objective}
-            </div>
+            {details.name.length > 0 && (
+                <div className="details-name" style={{ color: theme.color }}>
+                    {details.name}
+                </div>
+            )}
+
+            {details.objective.length > 0 && (
+                <div className="details-objective" style={{ fontSize: theme.size }}>
+                    {details.objective}
+                </div>
+            )}
+
             <div className="details-contacts-container">
                 {details.email.length > 0 && (
                     <div className="details-contacts-with-icon">

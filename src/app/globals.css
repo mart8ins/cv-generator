@@ -185,7 +185,7 @@ body {
     justify-content: space-between;
 }
 .section-description {
-    margin-top: 15px;
+    margin-top: 10px;
     text-align: justify;
     text-indent: 1rem;
     width: 90%;
@@ -204,7 +204,7 @@ body {
     justify-content: center;
 }
 .skills-input-preview-block {
-    margin-top: 20px;
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -245,7 +245,7 @@ body {
 .skills-preview-container {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 12px;
     justify-content: flex-start;
 }
 .skills-preview-element {

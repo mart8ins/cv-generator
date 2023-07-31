@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useState } from "react";
 
-export const AppThemeContext = createContext({} as ThemeContextData);
+export const AppThemeContext = createContext({} as any);
 
 const AppThemeContextProvider = ({ children }: {children: ReactNode}) => {
     const [pdfScale, setPdfScale] = useState(0.9);
