@@ -6,16 +6,14 @@ const AppThemeContextProvider = ({ children }: {children: ReactNode}) => {
     const [pdfScale, setPdfScale] = useState(0.9);
     const [defaultColor] = useState("#3B292FFF");
     const [defaultSize] = useState("10pt");
-    const [defaultIconSize] = useState("small");
 
     const [theme, setTheme] = useState({
         color: defaultColor,
-        size: defaultSize,
-        iconSize: defaultIconSize,
+        size: defaultSize
     });
 
     return (
-        <AppThemeContext.Provider value={{ theme, setTheme, defaultColor, defaultSize, pdfScale, setPdfScale, defaultIconSize }}>
+        <AppThemeContext.Provider value={{ theme, setTheme, defaultColor, defaultSize, pdfScale, setPdfScale }}>
             {children}
         </AppThemeContext.Provider>
     );

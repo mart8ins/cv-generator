@@ -107,7 +107,6 @@ type ThemeContextData = {
     setPdfScale: (arg: number) => void;
     defaultColor: string,
     defaultSize: string,
-    defaultIconSize: string,
     theme: Theme,
     setTheme: (arg: Theme) => void;
 }

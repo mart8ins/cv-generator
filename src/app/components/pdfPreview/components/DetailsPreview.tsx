@@ -26,7 +26,7 @@ export default function DetailsPreview() {
             <div className="details-contacts-container">
                 {details.email.length > 0 && (
                     <div className="details-contacts-with-icon">
-                        <EmailIcon fontSize={theme.iconSize} />
+                        <EmailIcon fontSize="small" />
                         <div className="details-contact" style={{ fontSize: theme.size }}>
                             {details.email}
                         </div>
@@ -35,7 +35,7 @@ export default function DetailsPreview() {
 
                 {details.phone.length > 0 && (
                     <div className="details-contacts-with-icon">
-                        <PhoneAndroidIcon fontSize={theme.iconSize} />
+                        <PhoneAndroidIcon fontSize="small" />
                         <div className="details-contact" style={{ fontSize: theme.size }}>
                             {details.phone}
                         </div>
@@ -44,7 +44,7 @@ export default function DetailsPreview() {
 
                 {details.website.length > 0 && (
                     <div className="details-contacts-with-icon" style={{ fontSize: theme.size }}>
-                        <WebIcon fontSize={theme.iconSize} />
+                        <WebIcon fontSize="small" />
                         <div className="details-contact" style={{ fontSize: theme.size }}>
                             {details.website}
                         </div>
@@ -53,7 +53,7 @@ export default function DetailsPreview() {
 
                 {details.location.length > 0 && (
                     <div className="details-contacts-with-icon" style={{ fontSize: theme.size }}>
-                        <LocationOnIcon fontSize={theme.iconSize} />
+                        <LocationOnIcon fontSize="small" />
                         <div className="details-contact" style={{ fontSize: theme.size }}>
                             {details.location}
                         </div>
