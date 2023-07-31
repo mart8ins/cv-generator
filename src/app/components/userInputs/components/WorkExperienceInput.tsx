@@ -5,10 +5,10 @@ import { TextField, Button } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import ListIcon from "@mui/icons-material/List";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import ExpierenceBlock from "@/app/components/shared/ExpierenceBlock";
+import ExperienceBlock from "@/app/components/shared/ExperienceBlock";
 import { LocalStorageActions } from "@/app/context/localStorage";
 
-export default function WorkExpierenceInput() {
+export default function WorkExperienceInput() {
     const [valid, setValid] = useState(false);
     const { workExperience, setWorkExperience, workExperienceAll, setWorkExperienceAll } = useContext(CvContext);
 
@@ -19,9 +19,9 @@ export default function WorkExpierenceInput() {
             workExperience.date.length > 0 &&
             workExperience.description.length > 0
         ) {
-            setValid(false)
+            setValid(false);
         } else {
-            setValid(true)
+            setValid(true);
         }
     }, [workExperience]);
 
@@ -57,7 +57,7 @@ export default function WorkExpierenceInput() {
     }
 
     function deleteWorkExpierence(id: String) {
-        const remaining = workExperienceAll.data.filter((w: WorkExpierenceType) => {
+        const remaining = workExperienceAll.data.filter((w: WorkExperienceType) => {
             if (id != w.id) {
                 return w;
             }
@@ -166,7 +166,7 @@ export default function WorkExpierenceInput() {
 
             <div className="section-input-group">
                 {workExperienceAll.data.length > 0 &&
-                    workExperienceAll.data.map((element: WorkExpierenceType) => {
+                    workExperienceAll.data.map((element: WorkExperienceType) => {
                         return (
                             <div key={element.id} className="input-added-section">
                                 <div className="input-added-section-delete-container">
@@ -174,7 +174,7 @@ export default function WorkExpierenceInput() {
                                         <DeleteForeverIcon onClick={() => deleteWorkExpierence(element.id)} />
                                     </div>
                                 </div>
-                                <ExpierenceBlock inputView={true} workExperience={element} />
+                                <ExperienceBlock inputView={true} workExperience={element} />
                             </div>
                         );
                     })}

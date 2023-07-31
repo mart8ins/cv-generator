@@ -7,7 +7,7 @@ type DetailsType = {
     location: string;
 };
 
-type WorkExpierenceType = {
+type WorkExperienceType = {
     id: string;
     company: string;
     job_title: string;
@@ -15,9 +15,9 @@ type WorkExpierenceType = {
     description: string;
 };
 
-type WorkExpierenceAllType = {
+type WorkExperienceAllType = {
     title: string;
-    data: WorkExpierenceType[];
+    data: WorkExperienceType[];
 };
 
 type EducationType = {
@@ -43,7 +43,7 @@ type ProjectsType = {
 
 type ProjectsAllType = {
     title: string;
-    data: ProjectsType[]
+    data: ProjectsType[];
 };
 
 type SkillType = {
@@ -53,20 +53,20 @@ type SkillType = {
 };
 type SkillsAllType = {
     title: string;
-    data: SkillType[]
+    data: SkillType[];
 };
 
 type AppContextData = {
     details: DetailsType;
     setDetails: (arg: DetailsType) => void;
-    workExperience: WorkExpierenceType;
-    setWorkExperience: (arg: WorkExpierenceType) => void;
+    workExperience: WorkExperienceType;
+    setWorkExperience: (arg: WorkExperienceType) => void;
     workExperienceAll: {
         title: string;
-        data: WorkExpierenceType[];
+        data: WorkExperienceType[];
     };
     setWorkExperienceAll: any;
-    // (arg: WorkExpierenceAllType) => void;
+    // (arg: WorkExperienceAllType) => void;
 
     education: EducationType;
     setEducation: (arg: EducationType) => void;
@@ -87,7 +87,7 @@ type AppContextData = {
     // (arg: ProjectsAllType) => void
 
     skill: SkillType;
-    setSkill: (arg: SkillType)=> void;
+    setSkill: (arg: SkillType) => void;
     skillsAll: {
         title: string;
         data: SkillType[];
@@ -97,16 +97,16 @@ type AppContextData = {
 };
 
 type Theme = {
-    color: string,
-    size: string,
-    iconSize: string
-}
+    color: string;
+    size: string;
+    iconSize: string;
+};
 
 type ThemeContextData = {
-    pdfScale: number,
+    pdfScale: number;
     setPdfScale: (arg: number) => void;
-    defaultColor: string,
-    defaultSize: string,
-    theme: Theme,
+    defaultColor: string;
+    defaultSize: string;
+    theme: Theme;
     setTheme: (arg: Theme) => void;
-}
+};

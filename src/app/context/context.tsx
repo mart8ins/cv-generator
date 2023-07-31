@@ -31,7 +31,7 @@ const CvContextProvider = ({ children }: { children: ReactNode }) => {
     });
 
     const [workExperienceAll, setWorkExperienceAll] = useState({
-        title: "WORK EXPIERENCE",
+        title: "WORK EXPERIENCE",
         data: [],
     });
 

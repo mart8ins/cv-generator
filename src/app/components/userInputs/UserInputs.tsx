@@ -3,7 +3,7 @@ import EducationInput from "./components/EducationInput";
 import ProjectsInput from "./components/ProjectsInput";
 import SettingsInput from "./components/SettingsInput";
 import SkillsInput from "./components/skillsInput/SkillsInput";
-import WorkExpierenceInput from "./components/WorkExpierenceInput";
+import WorkExperienceInput from "./components/WorkExperienceInput";
 
 export default function UserInputs() {
     return (
@@ -13,7 +13,7 @@ export default function UserInputs() {
             </div>
 
             <div className="inputs-container">
-                <WorkExpierenceInput />
+                <WorkExperienceInput />
             </div>
 
             <div className="inputs-container">

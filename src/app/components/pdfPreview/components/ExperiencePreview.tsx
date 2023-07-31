@@ -1,9 +1,9 @@
 import { CvContext } from "@/app/context/context";
 import { AppThemeContext } from "@/app/context/theme-context";
 import { useContext } from "react";
-import ExpierenceBlock from "../../shared/ExpierenceBlock";
+import ExperienceBlock from "../../shared/ExperienceBlock";
 
-export default function ExpierencePreview() {
+export default function ExperiencePreview() {
     const { workExperience, workExperienceAll } = useContext(CvContext);
     const { theme } = useContext(AppThemeContext);
     return (
@@ -17,17 +17,19 @@ export default function ExpierencePreview() {
                     <div
                         className="section-identifier"
                         style={{ width: theme.size, height: theme.size, backgroundColor: theme.color }}></div>
-                    <div className="section-identifier-title" style={{fontSize: theme.size}}>{workExperienceAll.title}</div>
+                    <div className="section-identifier-title" style={{ fontSize: theme.size }}>
+                        {workExperienceAll.title}
+                    </div>
                 </div>
             )}
 
             <div>
                 {workExperienceAll.data.length > 0 &&
-                    workExperienceAll.data.map((element: WorkExpierenceType) => {
-                        return <ExpierenceBlock inputView={false} key={element.id} workExperience={element} />;
+                    workExperienceAll.data.map((element: WorkExperienceType) => {
+                        return <ExperienceBlock inputView={false} key={element.id} workExperience={element} />;
                     })}
             </div>
-            <ExpierenceBlock inputView={false} workExperience={workExperience} />
+            <ExperienceBlock inputView={false} workExperience={workExperience} />
         </div>
     );
 }

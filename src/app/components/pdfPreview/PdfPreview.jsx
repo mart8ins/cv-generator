@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react";
 import DetailsPreview from "./components/DetailsPreview";
 import { AppThemeContext } from "@/app/context/theme-context";
-import ExpierencePreview from "./components/ExpierencePreview";
+import ExperiencePreview from "./components/ExperiencePreview";
 import EducationPreview from "./components/EducationPreview";
 import ProjectsPreview from "./components/ProjectsPreview";
 import SkillsPreview from "./components/SkillsPreview";
@@ -13,7 +13,7 @@ export default function PdfPreview() {
 
     return (
         <div className="pdfPreview">
-            <PDFoptions pdfRef={pdfRef}/>
+            <PDFoptions pdfRef={pdfRef} />
             <div
                 ref={pdfRef}
                 className="pdf-document"
@@ -23,7 +23,7 @@ export default function PdfPreview() {
                 </div>
 
                 <div className="preview-group">
-                    <ExpierencePreview />
+                    <ExperiencePreview />
                 </div>
 
                 <div className="preview-group">
