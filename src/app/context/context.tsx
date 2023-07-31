@@ -1,8 +1,8 @@
-import { createContext, useState } from "react";
+import { ReactNode, createContext, useState } from "react";
 
-export const CvContext = createContext({} as any);
+export const CvContext = createContext({} as AppContextData);
 
-const CvContextProvider = ({ children }: any) => {
+const CvContextProvider = ({ children }: {children: ReactNode}) => {
     
     const [details, setDetails] = useState({
         name: "Martins Meisters",
@@ -85,7 +85,7 @@ const CvContextProvider = ({ children }: any) => {
     const [skill, setSkill] = useState({
         id: "",
         name: "",
-        rate: null,
+        rate: 0,
     });
 
     return (
@@ -105,10 +105,10 @@ const CvContextProvider = ({ children }: any) => {
                 setProject,
                 projectsAll,
                 setProjectsAll,
+                skill,
+                setSkill,
                 skillsAll,
                 setSkillsAll,
-                skill,
-                setSkill
             }}>
             {children}
         </CvContext.Provider>

@@ -1,7 +1,7 @@
 import { AppThemeContext } from "@/app/context/theme-context";
 import { useContext } from "react";
 
-export default function ProjectBlock({ project }: any) {
+export default function ProjectBlock({ project }: {project: ProjectsType}) {
     const { theme } = useContext(AppThemeContext);
     return (
         <div className="section-block" style={{ fontSize: theme.size }}>

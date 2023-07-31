@@ -1,7 +1,7 @@
 import { AppThemeContext } from "@/app/context/theme-context";
 import { useContext } from "react";
 
-export default function ExpierenceBlock({workExperience}: any){
+export default function ExpierenceBlock({workExperience}: {workExperience: WorkExpierenceType}){
     const { theme } = useContext(AppThemeContext);
     return (
         <div className="section-block" style={{ fontSize: theme.size }}>

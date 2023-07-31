@@ -23,7 +23,7 @@ export default function ProjectsPreview() {
 
             <div>
                 {projectsAll.data.length > 0 &&
-                    projectsAll.data.map((element: any) => {
+                    projectsAll.data.map((element: ProjectsType) => {
                         return <ProjectBlock key={element.id} project={element}/>;
                     })}
             </div>

@@ -32,7 +32,7 @@ export default function WorkExpierenceInput() {
     }
 
     function deleteWorkExpierence(id: String) {
-        const remaining = workExperienceAll.data.filter((w: any) => {
+        const remaining = workExperienceAll.data.filter((w: WorkExpierenceType) => {
             if (id != w.id) {
                 return w;
             }
@@ -137,7 +137,7 @@ export default function WorkExpierenceInput() {
 
             <div className="section-input-group">
                 {workExperienceAll.data.length > 0 &&
-                    workExperienceAll.data.map((element: any) => {
+                    workExperienceAll.data.map((element: WorkExpierenceType) => {
                         return (
                             <div key={element.id} className="input-added-section">
                                 <div className="input-added-section-delete-container">

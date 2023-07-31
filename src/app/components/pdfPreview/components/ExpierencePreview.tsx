@@ -23,7 +23,7 @@ export default function ExpierencePreview() {
 
             <div>
                 {workExperienceAll.data.length > 0 &&
-                    workExperienceAll.data.map((element: any) => {
+                    workExperienceAll.data.map((element: EducationType) => {
                         return <ExpierenceBlock key={element.id} workExperience={element} />;
                     })}
             </div>

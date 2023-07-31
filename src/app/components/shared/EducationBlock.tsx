@@ -1,7 +1,7 @@
 import { AppThemeContext } from "@/app/context/theme-context";
 import { useContext } from "react";
 
-export default function EducationBlock({education}: any){
+export default function EducationBlock({education}: {education: EducationType}){
     const { theme } = useContext(AppThemeContext);
     return (
         <div className="section-block" style={{ fontSize: theme.size }}>

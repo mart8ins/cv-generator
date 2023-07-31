@@ -32,7 +32,7 @@ export default function ProjectsInput() {
     }
 
     function deleteProject(id: String){
-        const remaining = projectsAll.data.filter((w:any)=> {
+        const remaining = projectsAll.data.filter((w:ProjectsType)=> {
             if(id != w.id) {
                 return w;
             }
@@ -139,7 +139,7 @@ export default function ProjectsInput() {
 
             <div className="section-input-group">
                 {projectsAll.data.length > 0 &&
-                    projectsAll.data.map((element: any) => {
+                    projectsAll.data.map((element: ProjectsType) => {
                         return (
                             <div key={element.id} className="input-added-section">
                                 <div className="input-added-section-delete-container">

@@ -31,7 +31,7 @@ export default function EducatonInput() {
     }
 
     function deleteEducation(id: String){
-        const remaining = educationAll.data.filter((w:any)=> {
+        const remaining = educationAll.data.filter((w:EducationType)=> {
             if(id != w.id) {
                 return w;
             }
@@ -136,7 +136,7 @@ export default function EducatonInput() {
 
             <div className="section-input-group">
                 {educationAll.data.length > 0 &&
-                    educationAll.data.map((element: any) => {
+                    educationAll.data.map((element: EducationType) => {
                         return (
                             <div key={element.id} className="input-added-section">
                                 <div className="input-added-section-delete-container">

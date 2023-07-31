@@ -19,7 +19,7 @@ export default function SkillsPreview() {
 
             <div className="skills-preview-container">
                 {skillsAll.data.length > 0 &&
-                    skillsAll.data.map((element: any) => {
+                    skillsAll.data.map((element: SkillType) => {
                         return (
                             <div key={element.id} className="skills-preview-element">
                                 <Rating size="small" style={{ color: theme.color }} name="read-only" value={element.rate} readOnly />
