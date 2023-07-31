@@ -1,11 +1,23 @@
 import { CvContext } from "@/app/context/context";
 import { v4 as uuidv4 } from "uuid";
 import { TextField, Rating, Button } from "@mui/material";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function SkillsInputBlock() {
+    const [valid, setValid] = useState(false);
     const { skill, setSkill, skillsAll, setSkillsAll } = useContext(CvContext);
+
+    useEffect(() => {
+        if (
+            skill.name.length > 0 &&
+            skill.rate > 0
+        ) {
+            setValid(false)
+        } else {
+            setValid(true)
+        }
+    }, [skill]);
 
     useEffect(() => {
         setSkill({
@@ -67,7 +79,7 @@ export default function SkillsInputBlock() {
                 />
             </div>
             <div className="skills-btn-container">
-                <Button onClick={addSkill} variant="outlined">+ Add Skill</Button>
+                <Button disabled={valid} onClick={addSkill} variant="outlined">+ Add Skill</Button>
             </div>
         </div>
     );

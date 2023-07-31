@@ -1,5 +1,5 @@
 import { CvContext } from "@/app/context/context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
 import WebIcon from "@mui/icons-material/Web";
@@ -9,7 +9,21 @@ import ProjectBlock from "../../shared/ProjectBlock";
 import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function ProjectsInput() {
+    const [valid, setValid] = useState(false);
     const { project, setProject, projectsAll, setProjectsAll } = useContext(CvContext);
+
+    useEffect(() => {
+        if (
+            project.name.length > 0 &&
+            project.date.length > 0 &&
+            project.description.length > 0 &&
+            project.link.length > 0
+        ) {
+            setValid(false)
+        } else {
+            setValid(true)
+        }
+    }, [project]);
 
     function addProjectToList() {
         const id = uuidv4();
@@ -148,7 +162,7 @@ export default function ProjectsInput() {
             </div>
 
             <div className="section-input-group add-new-job-btn">
-                <Button onClick={addProjectToList} variant="outlined">
+                <Button disabled={valid} onClick={addProjectToList} variant="outlined">
                     + Add Project
                 </Button>
             </div>

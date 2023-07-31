@@ -1,5 +1,5 @@
 import { CvContext } from "@/app/context/context";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
@@ -9,7 +9,21 @@ import EducationBlock from "../../shared/EducationBlock";
 import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function EducatonInput() {
+    const [valid, setValid] = useState(false);
     const { education, setEducation, educationAll, setEducationAll } = useContext(CvContext);
+
+    useEffect(() => {
+        if (
+            education.school.length > 0 &&
+            education.date.length > 0 &&
+            education.degree.length > 0 &&
+            education.additional.length > 0
+        ) {
+            setValid(false)
+        } else {
+            setValid(true)
+        }
+    }, [education]);
 
     function addEducationToList() {
         const id = uuidv4();
@@ -147,7 +161,7 @@ export default function EducatonInput() {
                 />
             </div>
             <div className="section-input-group add-new-job-btn">
-                <Button onClick={addEducationToList} variant="outlined">
+                <Button disabled={valid} onClick={addEducationToList} variant="outlined">
                     + Add Education
                 </Button>
             </div>

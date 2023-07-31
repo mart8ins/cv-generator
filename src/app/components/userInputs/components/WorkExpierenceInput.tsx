@@ -1,15 +1,29 @@
 import { CvContext } from "@/app/context/context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import ListIcon from "@mui/icons-material/List";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ExpierenceBlock from "@/app/components/shared/ExpierenceBlock";
 import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function WorkExpierenceInput() {
+    const [valid, setValid] = useState(false);
     const { workExperience, setWorkExperience, workExperienceAll, setWorkExperienceAll } = useContext(CvContext);
+
+    useEffect(() => {
+        if (
+            workExperience.company.length > 0 &&
+            workExperience.job_title.length > 0 &&
+            workExperience.date.length > 0 &&
+            workExperience.description.length > 0
+        ) {
+            setValid(false)
+        } else {
+            setValid(true)
+        }
+    }, [workExperience]);
 
     function addExpieranceToList() {
         const id = uuidv4();
@@ -18,10 +32,9 @@ export default function WorkExpierenceInput() {
             data: [
                 {
                     ...workExperience,
-                    id
+                    id,
                 },
                 ...workExperienceAll.data,
-                
             ],
         });
         LocalStorageActions.setItem("workExperienceAll", {
@@ -29,10 +42,9 @@ export default function WorkExpierenceInput() {
             data: [
                 {
                     ...workExperience,
-                    id
+                    id,
                 },
                 ...workExperienceAll.data,
-                
             ],
         });
         setWorkExperience({
@@ -147,7 +159,7 @@ export default function WorkExpierenceInput() {
                 />
             </div>
             <div className="section-input-group add-new-job-btn">
-                <Button onClick={addExpieranceToList} variant="outlined">
+                <Button disabled={valid} onClick={addExpieranceToList} variant="outlined">
                     + Add Job
                 </Button>
             </div>
