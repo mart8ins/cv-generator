@@ -4,6 +4,7 @@ import { LocalStorageActions } from "./localStorage";
 export const CvContext = createContext({} as AppContextData);
 
 const CvContextProvider = ({ children }: { children: ReactNode }) => {
+    
     const [details, setDetails] = useState({
         name: "",
         objective: "",

@@ -72,10 +72,8 @@ body {
     font-weight: bold;
 }
 
-
 /* DETAILS PREVIEW*/
 .pdfPreview {
-    /* min-width: 49%; */
     max-height: 100vh;
     max-width: max-content;
     height: min-content;
@@ -83,15 +81,41 @@ body {
 }
 
 .pdf-document-options {
-    padding: 5px;
-    border-radius: 10px;
-    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 35%;
     position: fixed;
+    z-index: 10;
+    bottom: 20px;
+    right: left;
+}
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.pdf-save-container {
     background-color: black;
     color: white;
-    z-index: 10;
-    right: 30px;
-    top: 35px;
+    max-width: max-content;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+.pdf-save-container > div {
+    margin-right: 15px;
+}
+.pdf-save-container:hover {
+    cursor: pointer;
+    background-color: rgb(74, 74, 74);
+    transition: 0.3s;
 }
 
 .pdf-document {
@@ -99,25 +123,6 @@ body {
     border-top: 8px solid;
     transform-origin: top left;
     margin: 50px;
-}
-
-.pdf-save-container {
-    background-color: black;
-    max-width: max-content;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 10px auto;
-    display: flex;
-    justify-content: center;
-    
-}
-.pdf-save-container>div {
-    margin-right: 5px;
-}
-.pdf-save-container:hover {
-    cursor: pointer;
-    background-color: rgb(74, 74, 74);
-    transition: 0.3s;
 }
 
 .preview-group {

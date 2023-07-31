@@ -6,13 +6,13 @@ import AppThemeContextProvider from "./context/theme-context";
 
 export default function Home() {
     return (
-        <div className="container">
-            <CvContextProvider>
+         <CvContextProvider>
                 <AppThemeContextProvider>
-                    <UserInputs />
-                    <PdfPreview />
+                    <div className="container">
+                        <UserInputs />
+                        <PdfPreview />
+                    </div>
                 </AppThemeContextProvider>
             </CvContextProvider>
-        </div>
     );
 }

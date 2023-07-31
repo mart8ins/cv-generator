@@ -13,7 +13,7 @@ export default function PdfPreview() {
 
     return (
         <div className="pdfPreview">
-            <PDFoptions pdfRef={pdfRef} />
+            <PDFoptions pdfRef={pdfRef}/>
             <div
                 ref={pdfRef}
                 className="pdf-document"
