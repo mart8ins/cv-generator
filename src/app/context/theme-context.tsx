@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
+import { LocalStorageActions } from "./localStorage";
 
 export const AppThemeContext = createContext({} as any);
 
@@ -11,6 +12,13 @@ const AppThemeContextProvider = ({ children }: {children: ReactNode}) => {
         color: defaultColor,
         size: defaultSize
     });
+
+    useEffect(()=> {
+        const dataFromLS = LocalStorageActions.getItem("cv-theme");
+        if(dataFromLS) {
+            setTheme(dataFromLS);
+        }
+    }, []);
 
     return (
         <AppThemeContext.Provider value={{ theme, setTheme, defaultColor, defaultSize, pdfScale, setPdfScale }}>
