@@ -4,11 +4,10 @@ import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import ListIcon from "@mui/icons-material/List";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import ExperienceBlock from "@/app/components/shared/ExperienceBlock";
 import { LocalStorageActions } from "@/app/context/localStorage";
+import WorkInput from "./WorkInput";
 
-export default function WorkExperienceInput() {
+export default function WorkExperience() {
     const [valid, setValid] = useState(false);
     const { workExperience, setWorkExperience, workExperienceAll, setWorkExperienceAll } = useContext(CvContext);
 
@@ -72,6 +71,53 @@ export default function WorkExperienceInput() {
         });
     }
 
+    function changeExistingData(e: any, element: WorkExperienceType) {
+        const changed = workExperienceAll.data.map((w: WorkExperienceType) => {
+            if (element.id == w.id) {
+                return {
+                    ...element,
+                    [e.target.name]: e.target.value
+                }
+            } else {
+                return w;
+            }
+        });
+
+        setWorkExperienceAll({
+            ...workExperienceAll,
+            data: changed,
+        });
+        LocalStorageActions.setItem("workExperienceAll", {
+            ...workExperienceAll,
+            data: changed,
+        });
+
+    }
+
+    function changeCurrentData(e: any, element: WorkExperienceType) {
+        setWorkExperience({
+            ...element,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    function moveDataBlock(direction: string, index: number){
+        const fromIndex = index;
+        const toIndex = direction == "up" ? fromIndex - 1 : fromIndex + 1;
+        const movedData = workExperienceAll.data;
+        const movedElement = movedData.splice(fromIndex, 1)[0];
+        movedData.splice(toIndex, 0, movedElement);
+
+        setWorkExperienceAll({
+            ...workExperienceAll,
+            data: movedData,
+        });
+        LocalStorageActions.setItem("workExperienceAll", {
+            ...workExperienceAll,
+            data: movedData,
+        });
+    }
+
     return (
         <div>
             <div className="section-input-group">
@@ -98,87 +144,40 @@ export default function WorkExperienceInput() {
                     </div>
                 </div>
             </div>
-            <div className="section-input-group">
-                <TextField
-                    fullWidth
-                    onChange={(e) =>
-                        setWorkExperience({
-                            ...workExperience,
-                            company: e.target.value,
-                        })
-                    }
-                    id="outlined-basic"
-                    label="Company"
-                    variant="outlined"
-                    value={workExperience.company}
-                />
-            </div>
-            <div className="section-input-group section-fields-one-line">
-                <TextField
-                    fullWidth
-                    onChange={(e) =>
-                        setWorkExperience({
-                            ...workExperience,
-                            job_title: e.target.value,
-                        })
-                    }
-                    id="outlined-basic"
-                    label="Job title"
-                    variant="outlined"
-                    value={workExperience.job_title}
-                />
-                <div className="section-input-group-right-item">
-                    <TextField
-                        fullWidth
-                        onChange={(e) =>
-                            setWorkExperience({
-                                ...workExperience,
-                                date: e.target.value,
-                            })
-                        }
-                        id="outlined-basic"
-                        label="Date"
-                        variant="outlined"
-                        value={workExperience.date}
-                    />
-                </div>
-            </div>
-            <div className="section-input-group">
-                <TextField
-                    fullWidth
-                    onChange={(e) =>
-                        setWorkExperience({
-                            ...workExperience,
-                            description: e.target.value,
-                        })
-                    }
-                    id="outlined-basic"
-                    label="Description"
-                    variant="outlined"
-                    value={workExperience.description}
-                />
-            </div>
+
+            {workExperienceAll.data.length > 0 &&
+                workExperienceAll.data.map((element: WorkExperienceType, index) => {
+                    return <>
+                        <WorkInput
+                            key={element.id}
+                            index={index}
+                            length={workExperienceAll.data.length}
+                            element={element}
+                            handleData={changeExistingData}
+                            main={false}
+                            deleteWorkExpierence={deleteWorkExpierence}
+                            moveDataBlock={moveDataBlock} />
+                        <div className="section-input-group dotted-line"></div>
+                    </>
+                })
+            }
+
+            <WorkInput
+                element={workExperience}
+                index={null}
+                length={null}
+                handleData={changeCurrentData}
+                main={true}
+                deleteWorkExpierence={null}
+                moveDataBlock={null}
+            />
+
             <div className="section-input-group add-new-job-btn">
                 <Button disabled={valid} onClick={addExpieranceToList} variant="outlined">
                     + Add Job
                 </Button>
             </div>
 
-            <div className="section-input-group">
-                {workExperienceAll.data.length > 0 &&
-                    workExperienceAll.data.map((element: WorkExperienceType) => {
-                        return (
-                            <div key={element.id} className="input-added-section">
-                                <div className="input-added-section-delete-container">
-                                    <div className="input-added-section-delete">
-                                        <DeleteForeverIcon onClick={() => deleteWorkExpierence(element.id)} />
-                                    </div>
-                                </div>
-                                <ExperienceBlock inputView={true} workExperience={element} />
-                            </div>
-                        );
-                    })}
-            </div>
         </div>
     );
 }
