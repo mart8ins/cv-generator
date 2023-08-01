@@ -2,7 +2,7 @@ import { CvContext } from "@/app/context/context";
 import { useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TextField, Button } from "@mui/material";
-import WorkIcon from "@mui/icons-material/Work";
+import SchoolIcon from '@mui/icons-material/School';
 import ListIcon from "@mui/icons-material/List";
 import { LocalStorageActions } from "@/app/context/localStorage";
 import EducationInput from "./EducationInput";
@@ -123,7 +123,7 @@ export default function Education() {
             <div className="section-input-group">
                 <div className="section-title-countainer">
                     <div className="section-title-icon">
-                        <WorkIcon />
+                        <SchoolIcon />
                     </div>
                     <div className="section-title-input">
                         <TextField
