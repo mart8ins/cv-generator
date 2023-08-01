@@ -1,9 +1,9 @@
-import DetailsInput from "./components/details/DetailsInput";
-import SettingsInput from "./components/SettingsInput";
-import Education from "./components/education/Education";
-import SkillsInput from "./components/skills/SkillsInput";
-import WorkExperience from "./components/workExperience/WorkExperience";
-import Project from "./components/myProject/Project";
+import DetailsInput from "./components/myDetails/DetailsInput";
+import SettingsInput from "./components/cv-settings/SettingsInput";
+import Education from "./components/myEducation/Education";
+import SkillsInput from "./components/mySkills/SkillsInput";
+import WorkExperience from "./components/myWorkExperience/WorkExperience";
+import Project from "./components/myProjects/Project";
 
 export default function UserInputs() {
     return (

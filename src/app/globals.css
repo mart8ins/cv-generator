@@ -291,18 +291,19 @@ body {
     margin-top: 20px;
 }
 
-.offered-colors-container {
+.offered-colors-container, .offered-fontFamily-container {
     margin-top: 25px;
 }
 
-.offered-colors-title, .offered-size-title {
+.offered-colors-title, .offered-size-title, .offered-fontFamily-title {
     font-weight: bold;
     font-size: 13pt;
     color: grey;
 }
 
-.offered-colors {
+.offered-colors, .offered-fontFamily, .offered-sizes {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .offered-color-setting {
@@ -312,8 +313,14 @@ body {
     border-radius: 5px;
 }
 
-.offered-sizes {
-    display: flex;
+.offered-fontFamily-setting {
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: 11pt;
+    width: 120px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
 }
 
 .offered-size-setting {
@@ -324,7 +331,7 @@ body {
     padding: 10px;
     margin: 10px;
 }
-.offered-color-setting:hover, .offered-size-setting:hover {
+.offered-color-setting:hover, .offered-size-setting:hover, .offered-fontFamily-setting:hover {
     cursor: pointer;
 }
 

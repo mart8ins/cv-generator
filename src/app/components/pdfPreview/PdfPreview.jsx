@@ -7,12 +7,13 @@ import ProjectsPreview from "./components/ProjectsPreview";
 import SkillsPreview from "./components/SkillsPreview";
 import PDFoptions from "./components/getPdf/PDFOptions";
 
+  
 export default function PdfPreview() {
     const { theme, pdfScale } = useContext(AppThemeContext);
     const pdfRef = useRef(null);
 
     return (
-        <div className="pdfPreview">
+        <div className={`pdfPreview ${theme.fontFamily.font.className}`}>
             <PDFoptions pdfRef={pdfRef} />
             <div
                 ref={pdfRef}

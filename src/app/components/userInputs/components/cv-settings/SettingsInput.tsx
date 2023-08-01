@@ -3,6 +3,7 @@ import { AppThemeContext } from "@/app/context/theme-context";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { TextField } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
+import Fonts from "./Fonts";
 
 export default function SettingsInput() {
     const [customColor, setCustomColor] = useState("");
@@ -73,8 +74,10 @@ export default function SettingsInput() {
                         </div>
                     })}
                 </div>
-
             </div>
+            
+            <Fonts/>
+
         </div>
     );
 }
