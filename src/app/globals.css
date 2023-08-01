@@ -291,6 +291,30 @@ body {
     margin-top: 20px;
 }
 
+.offered-colors-container {
+    margin-top: 25px;
+}
+
+.offered-colors-title {
+    font-weight: bold;
+    font-size: 13pt;
+    color: grey;
+}
+
+.offered-colors {
+    display: flex;
+}
+
+.offered-color-setting {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.offered-color-setting:hover {
+    cursor: pointer;
+}
+
 /* custom scroll*/
 /* width */
 ::-webkit-scrollbar {

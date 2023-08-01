@@ -1,9 +1,9 @@
 import DetailsInput from "./components/details/DetailsInput";
 import SettingsInput from "./components/SettingsInput";
 import Education from "./components/education/Education";
-import SkillsInput from "./components/skillsInput/SkillsInput";
+import SkillsInput from "./components/skills/SkillsInput";
 import WorkExperience from "./components/workExperience/WorkExperience";
-import Project from "./components/project/Project";
+import Project from "./components/myProject/Project";
 
 export default function UserInputs() {
     return (
