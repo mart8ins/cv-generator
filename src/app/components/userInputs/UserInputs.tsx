@@ -1,7 +1,7 @@
 import DetailsInput from "./components/myDetails/DetailsInput";
 import SettingsInput from "./components/cv-settings/SettingsInput";
 import Education from "./components/myEducation/Education";
-import SkillsInput from "./components/mySkills/SkillsInput";
+import Skills from "./components/mySkills/Skills";
 import WorkExperience from "./components/myWorkExperience/WorkExperience";
 import Project from "./components/myProjects/Project";
 
@@ -12,7 +12,7 @@ export default function UserInputs() {
                 <DetailsInput />
             </div>
 
-            <div className="inputs-container">
+            {/* <div className="inputs-container">
                 <WorkExperience />
             </div>
 
@@ -22,10 +22,10 @@ export default function UserInputs() {
 
             <div className="inputs-container">
                 <Project />
-            </div>
+            </div> */}
 
             <div className="inputs-container">
-                <SkillsInput />
+                <Skills />
             </div>
 
             <div className="inputs-container">

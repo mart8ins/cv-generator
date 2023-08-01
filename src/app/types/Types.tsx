@@ -66,7 +66,6 @@ type AppContextData = {
         data: WorkExperienceType[];
     };
     setWorkExperienceAll: any;
-    // (arg: WorkExperienceAllType) => void;
 
     education: EducationType;
     setEducation: (arg: EducationType) => void;
@@ -75,7 +74,6 @@ type AppContextData = {
         data: EducationType[];
     };
     setEducationAll: any;
-    // (arg: EducationAllType) => void
 
     project: ProjectsType;
     setProject: (arg: ProjectsType) => void;
@@ -84,16 +82,11 @@ type AppContextData = {
         data: ProjectsType[];
     };
     setProjectsAll: any;
-    // (arg: ProjectsAllType) => void
-
-    skill: SkillType;
-    setSkill: (arg: SkillType) => void;
     skillsAll: {
         title: string;
         data: SkillType[];
     };
     setSkillsAll: any;
-    // (arg: SkillsAllType) => void
 };
 
 type Theme = {

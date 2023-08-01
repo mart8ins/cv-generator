@@ -1,43 +1,27 @@
-import { CvContext } from "@/app/context/context";
-import { useContext } from "react";
-import { TextField } from "@mui/material";
-import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
-import ListIcon from "@mui/icons-material/List";
-import SkillsInputBlock from "./SkillsInputBlock";
-import SkillsPreviewBlock from "./SkillsPreviewBlock";
+import { TextField, Rating } from "@mui/material";
 
-export default function SkillsInput() {
-    const { skillsAll, setSkillsAll } = useContext(CvContext);
+export default function SkillsInput({ element, handelSkill }: { element: any, handelSkill: any }) {
 
     return (
         <div>
-            <div className="section-input-group">
-                <div className="section-title-countainer">
-                    <div className="section-title-icon">
-                        <MilitaryTechIcon />
-                    </div>
-                    <div className="section-title-input">
-                        <TextField
-                            onChange={(e) =>
-                                setSkillsAll({
-                                    ...skillsAll,
-                                    title: e.target.value.toUpperCase(),
-                                })
-                            }
-                            id="standard-basic"
-                            fullWidth
-                            variant="standard"
-                            value={skillsAll.title}
-                        />
-                    </div>
-                    <div className="section-title-options">
-                        <ListIcon color="disabled" />
-                    </div>
+            <div className="skills-fields-container">
+                <div className="skills-fields-name"><TextField
+                    id="outlined-basic"
+                    label="Skill"
+                    variant="outlined"
+                    value={element.name}
+                    size="small"
+                    onChange={(e)=> {handelSkill(e, element.id)}}
+                    name="name"
+                /></div>
+                <div className="skills-fields-rating">
+                    <Rating
+                        value={element.rate}
+                        size="medium"
+                        onChange={(e)=> {handelSkill(e, element.id)}}
+                        name="rate"
+                    />
                 </div>
-            </div>
-            <div className="section-input-group">
-                <SkillsInputBlock />
-                <SkillsPreviewBlock />
             </div>
         </div>
     );

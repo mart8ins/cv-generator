@@ -216,11 +216,6 @@ body {
     margin-bottom: 20px;
 }
 
-.skills-btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .skills-input-preview-block {
     margin-top: 15px;
     display: flex;
@@ -264,7 +259,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin-top: 12px;
-    justify-content: flex-start;
+    justify-content: center;
 }
 .skills-preview-element {
     display: flex;
@@ -274,6 +269,25 @@ body {
     margin: 5px 15px;
     max-width: 15%;
     text-align: center;
+}
+
+.skills-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skills-fields-container {
+    padding: 5px;
+}
+.skills-fields-name {
+    width: 49%;
+}
+.skills-fields-rating {
+    width: 49%;
 }
 
 .settings-title-container {
@@ -295,7 +309,7 @@ body {
     margin-top: 25px;
 }
 
-.offered-colors-title, .offered-size-title, .offered-fontFamily-title {
+.offered-colors-title, .offered-size-title, .offered-fontFamily-title, .skills-title {
     font-weight: bold;
     font-size: 13pt;
     color: grey;

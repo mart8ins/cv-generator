@@ -82,15 +82,35 @@ const CvContextProvider = ({ children }: { children: ReactNode }) => {
         }
     }, []);
 
-    const [skill, setSkill] = useState({
-        id: "",
-        name: "",
-        rate: 0,
-    });
-
     const [skillsAll, setSkillsAll] = useState({
-        title: "SKILLS",
-        data: [],
+        title: "TOP SKILLS",
+        data: [
+            {
+            id: "top-skill-1",
+            name: "",
+            rate: 1
+        },
+        {
+            id: "top-skill-2",
+            name: "",
+            rate: 1
+        },
+        {
+            id: "top-skill-3",
+            name: "",
+            rate: 1
+        },
+        {
+            id: "top-skill-4",
+            name: "",
+            rate: 1
+        },
+        {
+            id: "top-skill-5",
+            name: "",
+            rate: 1
+        }
+    ],
     });
 
     useEffect(() => {
@@ -117,8 +137,6 @@ const CvContextProvider = ({ children }: { children: ReactNode }) => {
                 setProject,
                 projectsAll,
                 setProjectsAll,
-                skill,
-                setSkill,
                 skillsAll,
                 setSkillsAll,
             }}>
