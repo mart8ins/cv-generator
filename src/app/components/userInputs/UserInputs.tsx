@@ -12,25 +12,25 @@ export default function UserInputs() {
                 <DetailsInput />
             </div>
 
-            {/* <div className="inputs-container">
+            <div className="inputs-container">
                 <WorkExperience />
-            </div> */}
+            </div>
 
-            {/* <div className="inputs-container">
+            <div className="inputs-container">
                 <Education />
-            </div> */}
+            </div>
 
             <div className="inputs-container">
                 <Project />
             </div>
 
-            {/* <div className="inputs-container">
+            <div className="inputs-container">
                 <SkillsInput />
             </div>
 
             <div className="inputs-container">
                 <SettingsInput />
-            </div> */}
+            </div>
 
             <div className="inputs-container spacer-div"></div>
         </div>
