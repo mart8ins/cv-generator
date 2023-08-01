@@ -295,7 +295,7 @@ body {
     margin-top: 25px;
 }
 
-.offered-colors-title {
+.offered-colors-title, .offered-size-title {
     font-weight: bold;
     font-size: 13pt;
     color: grey;
@@ -311,7 +311,20 @@ body {
     margin: 5px;
     border-radius: 5px;
 }
-.offered-color-setting:hover {
+
+.offered-sizes {
+    display: flex;
+}
+
+.offered-size-setting {
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+.offered-color-setting:hover, .offered-size-setting:hover {
     cursor: pointer;
 }
 
