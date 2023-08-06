@@ -4,7 +4,7 @@ import { LocalStorageActions } from "./localStorage";
 export const CvContext = createContext({} as AppContextData);
 
 const CvContextProvider = ({ children }: { children: ReactNode }) => {
-    
+
     const [details, setDetails] = useState({
         name: "",
         objective: "",
@@ -86,31 +86,31 @@ const CvContextProvider = ({ children }: { children: ReactNode }) => {
         title: "TOP SKILLS",
         data: [
             {
-            id: "top-skill-1",
-            name: "",
-            rate: 1
-        },
-        {
-            id: "top-skill-2",
-            name: "",
-            rate: 1
-        },
-        {
-            id: "top-skill-3",
-            name: "",
-            rate: 1
-        },
-        {
-            id: "top-skill-4",
-            name: "",
-            rate: 1
-        },
-        {
-            id: "top-skill-5",
-            name: "",
-            rate: 1
-        }
-    ],
+                id: "top-skill-1",
+                name: "",
+                rate: 1
+            },
+            {
+                id: "top-skill-2",
+                name: "",
+                rate: 1
+            },
+            {
+                id: "top-skill-3",
+                name: "",
+                rate: 1
+            },
+            {
+                id: "top-skill-4",
+                name: "",
+                rate: 1
+            },
+            {
+                id: "top-skill-5",
+                name: "",
+                rate: 1
+            }
+        ],
     });
 
     useEffect(() => {
@@ -119,6 +119,11 @@ const CvContextProvider = ({ children }: { children: ReactNode }) => {
             setSkillsAll(detailsFromLS);
         }
     }, []);
+
+    const [custom, setCustom] = useState({
+        title: "",
+        text: ""
+    });
 
     return (
         <CvContext.Provider
@@ -139,6 +144,7 @@ const CvContextProvider = ({ children }: { children: ReactNode }) => {
                 setProjectsAll,
                 skillsAll,
                 setSkillsAll,
+                custom, setCustom
             }}>
             {children}
         </CvContext.Provider>

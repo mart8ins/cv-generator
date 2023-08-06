@@ -1,14 +1,32 @@
 import { CvContext } from "@/app/context/context";
-import { useContext, useEffect, useState } from "react";
-import { TextField, Button } from "@mui/material";
+import { useContext } from "react";
+import { TextField } from "@mui/material";
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import ListIcon from "@mui/icons-material/List";
 import { LocalStorageActions } from "@/app/context/localStorage";
 
 export default function Custom() {
-    const [valid, setValid] = useState(false);
-    // const { custom, setCustom, customAll, setCustomAll } = useContext(CvContext);
+    const { custom, setCustom } = useContext(CvContext);
 
+    function handleText(e: any) {
+        setCustom({
+            ...custom,
+            text: e.target.value
+        })
+    }
+
+    const formatedText = (text: string) => {
+        const lines = text.split('\n');
+        const textWithBulletPoints = lines.map((line: string) => {
+            if(line[0] != "•" && line.length > 0) {
+                return `• ${line}`;
+            } else {
+                return line;
+            }
+            
+        });
+        return textWithBulletPoints.join('\n');
+    };
 
     return (
         <div>
@@ -29,7 +47,20 @@ export default function Custom() {
                     </div>
                 </div>
 
-                <div>INput box</div>
+                <div className="section-custom-text-countainer">
+                    <div className="section-custom-title">Custom text box</div>
+                    <div className="section-custom-textfield">
+                        <TextField
+                            fullWidth
+                            multiline
+                            id="outlined-basic"
+                            label="Text"
+                            variant="outlined"
+                            onChange={(e) => handleText(e)}
+                            value={formatedText(custom.text)}
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );

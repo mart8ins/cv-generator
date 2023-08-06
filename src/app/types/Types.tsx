@@ -56,6 +56,11 @@ type SkillsAllType = {
     data: SkillType[];
 };
 
+type CustomType = {
+    title: string,
+    text: string
+}
+
 type AppContextData = {
     details: DetailsType;
     setDetails: (arg: DetailsType) => void;
@@ -66,7 +71,6 @@ type AppContextData = {
         data: WorkExperienceType[];
     };
     setWorkExperienceAll: any;
-
     education: EducationType;
     setEducation: (arg: EducationType) => void;
     educationAll: {
@@ -74,7 +78,6 @@ type AppContextData = {
         data: EducationType[];
     };
     setEducationAll: any;
-
     project: ProjectsType;
     setProject: (arg: ProjectsType) => void;
     projectsAll: {
@@ -87,6 +90,8 @@ type AppContextData = {
         data: SkillType[];
     };
     setSkillsAll: any;
+    custom: CustomType,
+    setCustom: any
 };
 
 type Theme = {

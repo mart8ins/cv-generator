@@ -309,10 +309,18 @@ body {
     margin-top: 25px;
 }
 
-.offered-colors-title, .offered-size-title, .offered-fontFamily-title, .skills-title {
+.offered-colors-title, .offered-size-title, .offered-fontFamily-title, .skills-title, .section-custom-title {
     font-weight: bold;
     font-size: 13pt;
     color: grey;
+}
+
+.section-custom-title {
+    margin-top: 20px;
+}
+
+.section-custom-textfield {
+    margin-top: 20px;
 }
 
 .offered-colors, .offered-fontFamily, .offered-sizes {
