@@ -28,7 +28,7 @@ export default function CustomPreview() {
 
             <div className="custom-preview-container">
                 {splitedText.map((text: string, i) => {
-                    return <div key={i} style={{ fontSize: theme.size }}>{text}</div>
+                    return <div key={i} style={{ fontSize: theme.size }}>{text.length > 1 && text}</div>
                 })}
             </div>
         </div>
