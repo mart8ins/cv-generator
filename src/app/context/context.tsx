@@ -122,8 +122,16 @@ const CvContextProvider = ({ children }: { children: ReactNode }) => {
 
     const [custom, setCustom] = useState({
         title: "",
-        text: ""
+        text: "",
+        bulletpoints: false
     });
+
+    useEffect(() => {
+        const detailsFromLS = LocalStorageActions.getItem("custom");
+        if (detailsFromLS) {
+            setCustom(detailsFromLS);
+        }
+    }, []);
 
     return (
         <CvContext.Provider

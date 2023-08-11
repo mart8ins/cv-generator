@@ -209,6 +209,10 @@ body {
     width: 90%;
 }
 
+.custom-preview-container {
+    margin-top: 12px;
+}
+
 .skills-fields-container {
     display: flex;
     align-items: center;
