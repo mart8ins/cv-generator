@@ -318,6 +318,15 @@ body {
     font-size: 13pt;
     color: grey;
 }
+.section-custom-title {
+    display: flex;
+}
+.custom-bulletpoint-checker-container {
+    margin-left: 10px;
+}
+.custom-bulletpoint-checker-container:hover {
+    cursor: pointer;
+}
 
 .section-custom-title {
     margin-top: 20px;

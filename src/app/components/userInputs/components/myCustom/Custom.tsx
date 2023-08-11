@@ -1,9 +1,11 @@
 import { CvContext } from "@/app/context/context";
-import { useContext } from "react";
-import { TextField } from "@mui/material";
+import { useContext, useEffect } from "react";
+import { TextField, Tooltip } from "@mui/material";
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import ListIcon from "@mui/icons-material/List";
 import { LocalStorageActions } from "@/app/context/localStorage";
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
 export default function Custom() {
     const { custom, setCustom } = useContext(CvContext);
@@ -18,32 +20,70 @@ export default function Custom() {
             ...custom,
             title
         })
-    }
+    };
 
-    function handleText(e: any) {
+    const toogleBulletPoints = () => {
         setCustom({
             ...custom,
-            text: e.target.value
+            bulletpoints: !custom.bulletpoints
+        })
+        LocalStorageActions.setItem("custom", {
+            ...custom,
+            bulletpoints: !custom.bulletpoints
+        })
+    };
+
+    const handleBulletPointsForText = (text: string) => {
+        const lines = text.split('\n');
+        let formattedText;
+        if (custom.bulletpoints) {
+            formattedText = lines.map((line: string) => {
+                if (line[0] != "•" && line.length > 0) {
+                    return `• ${line}`;
+                } else {
+                    return line;
+                }
+            });
+        } else {
+            formattedText = lines.map((line: string) => {
+                if (line[0] == "•" && line.length > 0) {
+                    return `${line.slice(2)}`;
+                } else {
+                    return `${line}`;
+                }
+            });
+        }
+
+        return formattedText.join('\n');
+    };
+
+
+    function handleText(e: any) {
+        let formated = handleBulletPointsForText(e.target.value)
+        setCustom({
+            ...custom,
+            text: formated
         })
 
         LocalStorageActions.setItem("custom", {
             ...custom,
-            text: e.target.value
+            text: formated
         })
     }
 
-    const formatedText = (text: string) => {
-        const lines = text.split('\n');
-        const textWithBulletPoints = lines.map((line: string) => {
-            if(line[0] != "•" && line.length > 0) {
-                return `• ${line}`;
-            } else {
-                return line;
-            }
-            
-        });
-        return textWithBulletPoints.join('\n');
-    };
+    useEffect(() => {
+        let formated = handleBulletPointsForText(custom.text);
+        if (formated.length > 0) {
+            setCustom({
+                ...custom,
+                text: formated
+            })
+            LocalStorageActions.setItem("custom", {
+                ...custom,
+                text: formated
+            })
+        }
+    }, [custom.bulletpoints])
 
     return (
         <div>
@@ -57,7 +97,7 @@ export default function Custom() {
                             id="standard-basic"
                             fullWidth
                             variant="standard"
-                            onChange={(e)=> handleTitle(e)}
+                            onChange={(e) => handleTitle(e)}
                             value={custom.title}
                             placeholder="Your custom title"
                         />
@@ -68,7 +108,18 @@ export default function Custom() {
                 </div>
 
                 <div className="section-custom-text-countainer">
-                    <div className="section-custom-title">Custom text box</div>
+                    <div className="section-custom-title">Custom text box
+                        <span onClick={toogleBulletPoints} className="custom-bulletpoint-checker-container">
+                            {custom.bulletpoints ?
+                                <Tooltip title="Disable bulletpoints">
+                                    <RadioButtonCheckedIcon />
+                                </Tooltip>
+                                :
+                                <Tooltip title="Enable bulletpoints">
+                                    <RadioButtonUncheckedIcon />
+                                </Tooltip>}
+                        </span>
+                    </div>
                     <div className="section-custom-textfield">
                         <TextField
                             fullWidth
@@ -77,7 +128,7 @@ export default function Custom() {
                             label="Text"
                             variant="outlined"
                             onChange={(e) => handleText(e)}
-                            value={formatedText(custom.text)}
+                            value={custom.text}
                         />
                     </div>
                 </div>

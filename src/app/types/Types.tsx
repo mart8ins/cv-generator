@@ -58,7 +58,8 @@ type SkillsAllType = {
 
 type CustomType = {
     title: string,
-    text: string
+    text: string,
+    bulletpoints: boolean
 }
 
 type AppContextData = {

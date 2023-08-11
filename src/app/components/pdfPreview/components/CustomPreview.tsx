@@ -9,8 +9,10 @@ export default function CustomPreview() {
     const [splitedText, setSplitedText] = useState<string[]>([]);
 
     useEffect(() => {
-        const splited = custom.text.split("\n");
-        setSplitedText(splited)
+        if(custom.text.length > 0) {
+            const splited = custom.text.split("\n");
+            setSplitedText(splited)
+        }
     }, [custom.text])
 
     return (
@@ -26,7 +28,7 @@ export default function CustomPreview() {
 
             <div className="custom-preview-container">
                 {splitedText.map((text: string, i) => {
-                    return <div key={i}>{text}</div>
+                    return <div key={i} style={{ fontSize: theme.size }}>{text}</div>
                 })}
             </div>
         </div>
